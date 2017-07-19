@@ -1,3 +1,4 @@
+<script src="http://d3js.org/d3.v3.min.js"></script>
 
 <script>
 
@@ -21,6 +22,8 @@ function highlight(){
 
 	var score=new Array();
 
+	
+
  	score[0]=  document.getElementById("PosMind").innerHTML;
  	score[1]=  document.getElementById("Duraion").innerHTML;
  	score[2]=  document.getElementById("Involvement").innerHTML;
@@ -32,47 +35,79 @@ function highlight(){
  	score[8]=  document.getElementById("Attitude").innerHTML;
  	score[9]=  document.getElementById("Complexity").innerHTML;
 
+ 	document.getElementById("hPosMind").style.color='steelblue'
+ 	document.getElementById("hDuraion").style.color='steelblue'
+ 	document.getElementById("hInvolvement").style.color='steelblue'
+ 	document.getElementById("hPurInt").style.color='steelblue'
+ 	document.getElementById("hUniqueness").style.color='steelblue'
+ 	document.getElementById("hRelPurInt").style.color='steelblue'
+ 	document.getElementById("hRelevance").style.color='steelblue'
+ 	document.getElementById("hAVQuality").style.color='steelblue'
+ 	document.getElementById("hAttitude").style.color='steelblue'
+ 	document.getElementById("hComplexity").style.color='steelblue'
+
  	var leafid;
  	if (arrdata == "design"){
 	 	if(score[0]<=3.3018){
+			document.getElementById("hPosMind").style.color='orange'		
 	 		if(score[0]<=2.8849){
-	 			if(score[2]<=3.7268)
+	 			document.getElementById("hPosMind").style.color='orange'
+	 			if(score[2]<=3.7268){
+	 				document.getElementById("hInvolvement").style.color='orange'
 	 				leafid=49;
-	 			else
+	 				}	
+	 			else{
+	 				document.getElementById("hInvolvement").style.color='orange'
 	 				leafid=50;
+	 			}
 	 		}
-	 		else
-	 			leafid=46	
+	 		else{
+	 			document.getElementById("hPosMind").style.color='orange'
+	 			leafid=46
+	 		}	
 	 	}
 	 	else{
+	 		document.getElementById("hPosMind").style.color='orange'
 	 		if(score[1]<=3.0306){
+	 			document.getElementById("hDuraion").style.color='orange'
 	 			if(score[3]<=3.0294){
+	 				document.getElementById("hPurInt").style.color='orange'
 	 				leafid=51
 	 			}
 	 			else{
+	 				document.getElementById("hPurInt").style.color='orange'
 	 				if(score[4]<=4.6167){
+	 					document.getElementById("hUniqueness").style.color='orange'
 	 					leafid=55
 	 				}
 	 				else{
+	 					document.getElementById("hUniqueness").style.color='orange'
 	 					leafid=56
 	 				}
 	 			}
 
 	 		}
 	 		else{
+	 			document.getElementById("hDuraion").style.color='orange'
 	 			if(score[0]<=3.9375){
+	 				document.getElementById("hPosMind").style.color='orange'
 	 				if(score[5]<=5.6333){
+	 					document.getElementById("hRelPurInt").style.color='orange'
 	 					leafid=57
 	 				}
 	 				else{
+	 					document.getElementById("hRelPurInt").style.color='orange'
 	 					leafid=58
 	 				}
 	 			}
 	 			else{
+	 				document.getElementById("hPosMind").style.color='orange'
 	 				if(score[4]<=5.9419){
+	 					document.getElementById("hUniqueness").style.color='orange'
 	 					leafid=59
 	 				}
 	 				else{
+	 					document.getElementById("hUniqueness").style.color='orange'
 	 					leafid=60
 	 				}
 	 			}
@@ -83,36 +118,59 @@ function highlight(){
  	}
 	else{
 	 	if(score[6]<=4.3619){
+	 		document.getElementById("hRelevance").style.color='orange'
 	 		if(score[7]<=5.625){
-	 			if(score[2]<=5.7)
+	 			document.getElementById("hAVQuality").style.color='orange'
+	 			if(score[2]<=5.7){
+	 				document.getElementById("hInvolvement").style.color='orange'
 	 				leafid=110
-	 			else
+	 				}
+	 			else{
+	 				document.getElementById("hInvolvement").style.color='orange'
 	 				leafid=111
+	 			}
 	 		}
 	 		else{
+	 			document.getElementById("hAVQuality").style.color='orange'
 	 			leafid=107
 	 		}
 	 	}
 		else{
+			document.getElementById("hRelevance").style.color='orange'
 			if(score[0]<=3.9681){
+				document.getElementById("hPosMind").style.color='orange'
 				if(score[8]<=5.725){
-					if(score[1]<=2.5128)
-						leafid=116			
+					document.getElementById("hAttitude").style.color='orange'
+					if(score[1]<=2.5128){
+						document.getElementById("hDuraion").style.color='orange'
+						leafid=116
+						}			
 					else
+						document.getElementById("hDuraion").style.color='orange'
 						leafid=117
 				}
 				else{
-					if(score[9]<=6.2604)
+					document.getElementById("hAttitude").style.color='orange'
+					if(score[9]<=6.2604){
+						document.getElementById("hComplexity").style.color='orange'
 						leafid=118
-					else
+						}
+					else{
+						document.getElementById("hComplexity").style.color='orange'
 						leafid=119
+					}
 				}
 			}
 			else{
-				if(score[4]<=5.45)
+				document.getElementById("hPosMind").style.color='orange'
+				if(score[4]<=5.45){
+					document.getElementById("hUniqueness").style.color='orange'	
 					leafid=114
-				else
+					}
+				else{
+					document.getElementById("hUniqueness").style.color='orange'	
 					leafid=115
+				}
 				
 				
 			}			

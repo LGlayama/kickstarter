@@ -101,7 +101,7 @@
         <div class="col-sm-4 col-md-3 sidebar">
           <ul class="nav nav-sidebar">
 
-            <li><a href="#" onclick="feature_video()">PosMind</a></li>
+            <li><a href="#" id="hPosMind" onclick="feature_video()">PosMind</a></li>
                 <input type="range" min="0" max="8" value="0" step="0.5" onchange="showValue1(this.value)" />
                 <span id="PosMind">0</span>
                 <script type="text/javascript">
@@ -110,7 +110,7 @@
                   document.getElementById("PosMind").innerHTML=newValue;
                 }
                 </script>               
-            <li><a href="#" onclick="feature_video()" >Duraion</a></li>
+            <li><a href="#" id="hDuraion" onclick="feature_video()" >Duraion</a></li>
                 <input type="range" min="0" max="8" value="0" step="0.5" onchange="showValue2(this.value)" />
                 <span id="Duraion">0</span>
                 <script type="text/javascript">
@@ -119,7 +119,7 @@
                   document.getElementById("Duraion").innerHTML=newValue;
                 }
                 </script> 
-            <li><a href="#" onclick="feature_video()" >Involvement</a></li>
+            <li><a href="#" id="hInvolvement" onclick="feature_video()" >Involvement</a></li>
                 <input type="range" min="0" max="8" value="0" step="0.5" onchange="showValue3(this.value)" />
                 <span id="Involvement">0</span>
                 <script type="text/javascript">
@@ -128,7 +128,7 @@
                   document.getElementById("Involvement").innerHTML=newValue;
                 }
                 </script> 
-            <li><a href="#" onclick="feature_video()" >PurInt </a></li>
+            <li><a href="#" id="hPurInt" onclick="feature_video()" >PurInt </a></li>
                 <input type="range" min="0" max="8" value="0" step="0.5" onchange="showValue4(this.value)" />
                 <span id="PurInt">0</span>
                 <script type="text/javascript">
@@ -137,7 +137,7 @@
                   document.getElementById("PurInt").innerHTML=newValue;
                 }
                 </script> 
-            <li><a href="#" onclick="feature_video()" >Uniqueness</a></li>
+            <li><a href="#" id="hUniqueness" onclick="feature_video()" >Uniqueness</a></li>
                 <input type="range" min="0" max="8" value="0" step="0.5" onchange="showValue5(this.value)" />
                 <span id="Uniqueness">0</span>
                 <script type="text/javascript">
@@ -146,7 +146,7 @@
                   document.getElementById("Uniqueness").innerHTML=newValue;
                 }
                 </script> 
-            <li><a href="#" onclick="feature_video()" >RelPurInt</a></li>
+            <li><a href="#" id="hRelPurInt" onclick="feature_video()" >RelPurInt</a></li>
                 <input type="range" min="0" max="8" value="0" step="0.5" onchange="showValue6(this.value)" />
                 <span id="RelPurInt">0</span>
                 <script type="text/javascript">
@@ -155,7 +155,7 @@
                   document.getElementById("RelPurInt").innerHTML=newValue;
                 }
                 </script> 
-            <li><a href="#" onclick="feature_video()" >Relevance</a></li>
+            <li><a href="#" id="hRelevance" onclick="feature_video()" >Relevance</a></li>
                 <input type="range" min="0" max="8" value="0" step="0.5" onchange="showValue7(this.value)" />
                 <span id="Relevance">0</span>
                 <script type="text/javascript">
@@ -164,7 +164,7 @@
                   document.getElementById("Relevance").innerHTML=newValue;
                 }               
                 </script> 
-            <li><a href="#" onclick="feature_video()" >AVQuality</a></li>
+            <li><a href="#" id="hAVQuality" onclick="feature_video()" >AVQuality</a></li>
                 <input type="range" min="0" max="8" value="0" step="0.5" onchange="showValue8(this.value)" />
                 <span id="AVQuality">0</span>
                 <script type="text/javascript">
@@ -173,7 +173,7 @@
                   document.getElementById("AVQuality").innerHTML=newValue;
                 }               
                 </script> 
-            <li><a href="#" onclick="feature_video()" >Attitude</a></li>
+            <li><a href="#" id="hAttitude" onclick="feature_video()" >Attitude</a></li>
                 <input type="range" min="0" max="8" value="0" step="0.5" onchange="showValue9(this.value)" />
                 <span id="Attitude">0</span>
                 <script type="text/javascript">
@@ -182,7 +182,8 @@
                   document.getElementById("Attitude").innerHTML=newValue;
                 }               
                 </script>
-            <li><a href="#" onclick="feature_video()" >Complexity</a></li>
+            <li><a href="#" id="hComplexity" onclick="feature_video()" 
+            >Complexity</a></li>
                 <input type="range" min="0" max="8" value="0" step="0.5" onchange="showValue10(this.value)" />
                 <span id="Complexity">0</span>
                 <script type="text/javascript">
