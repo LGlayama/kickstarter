@@ -15,13 +15,23 @@ class Pages extends CI_Controller {
 	    $data['title'] = ucfirst($page); // Capitalize the first letter
 
 	    $this->load->helper('url');
-
+		
+		$this->load->view('button', $data);
+		
 	    $this->load->view('templates/header', $data);
 	    
-	    if ($arrdata == "design"){$this->load->view('design/'.$page, $data);}
-	    else{$this->load->view('fashion/'.$page, $data);}
+	    if ($arrdata == "design"){
+	    	$this->load->view('design/'.$page, $data);
+	    }
+	    elseif($arrdata == "fashion"){
+	    	$this->load->view('fashion/'.$page, $data);
+	    }
+	    else{
+	    	$this->load->view('technology/'.$page, $data);
+	    }
+	 
 
-	    $this->load->view('button', $data);
+	    
 	    $this->load->view('templates/footer', $data);
 	}
 

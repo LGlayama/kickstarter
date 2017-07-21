@@ -71,43 +71,20 @@
 
   <body>
 
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Project name</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="#">Settings</a></li>
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Help</a></li>
-          </ul>
-          <form class="navbar-form navbar-right">
-            <input type="text" class="form-control" placeholder="Search...">
-          </form>
-        </div>
-      </div>
-    </nav>
+
 
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-4 col-md-3 sidebar">
           <ul class="nav nav-sidebar">
 
-            <li><a href="#" id="hPosMind" onclick="feature_video()">PosMind</a></li>
+            <li><a href="#" id="hPositiveMindset" onclick="feature_video()">PositiveMindset</a></li>
                 <input type="range" min="0" max="8" value="0" step="0.5" onchange="showValue1(this.value)" />
-                <span id="PosMind">0</span>
+                <span id="PositiveMindset">0</span>
                 <script type="text/javascript">
                 function showValue1(newValue)
                 {
-                  document.getElementById("PosMind").innerHTML=newValue;
+                  document.getElementById("PositiveMindset").innerHTML=newValue;
                 }
                 </script>               
             <li><a href="#" id="hDuraion" onclick="feature_video()" >Duraion</a></li>
@@ -128,31 +105,22 @@
                   document.getElementById("Involvement").innerHTML=newValue;
                 }
                 </script> 
-            <li><a href="#" id="hPurInt" onclick="feature_video()" >PurInt </a></li>
+            <li><a href="#" id="hPurchaseIntent" onclick="feature_video()" >PurchaseIntent </a></li>
                 <input type="range" min="0" max="8" value="0" step="0.5" onchange="showValue4(this.value)" />
-                <span id="PurInt">0</span>
+                <span id="PurchaseIntent">0</span>
                 <script type="text/javascript">
                 function showValue4(newValue)
                 {
-                  document.getElementById("PurInt").innerHTML=newValue;
+                  document.getElementById("PurchaseIntent").innerHTML=newValue;
                 }
                 </script> 
-            <li><a href="#" id="hUniqueness" onclick="feature_video()" >Uniqueness</a></li>
+            <li><a href="#" id="hCreativity" onclick="feature_video()" >Creativity</a></li>
                 <input type="range" min="0" max="8" value="0" step="0.5" onchange="showValue5(this.value)" />
-                <span id="Uniqueness">0</span>
+                <span id="Creativity">0</span>
                 <script type="text/javascript">
                 function showValue5(newValue)
                 {
-                  document.getElementById("Uniqueness").innerHTML=newValue;
-                }
-                </script> 
-            <li><a href="#" id="hRelPurInt" onclick="feature_video()" >RelPurInt</a></li>
-                <input type="range" min="0" max="8" value="0" step="0.5" onchange="showValue6(this.value)" />
-                <span id="RelPurInt">0</span>
-                <script type="text/javascript">
-                function showValue6(newValue)
-                {
-                  document.getElementById("RelPurInt").innerHTML=newValue;
+                  document.getElementById("Creativity").innerHTML=newValue;
                 }
                 </script> 
             <li><a href="#" id="hRelevance" onclick="feature_video()" >Relevance</a></li>
