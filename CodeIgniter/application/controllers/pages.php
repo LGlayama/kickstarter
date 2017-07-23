@@ -16,7 +16,7 @@ class Pages extends CI_Controller {
 
 	    $this->load->helper('url');
 		
-		$this->load->view('button', $data);
+		
 		
 	    $this->load->view('templates/header', $data);
 	    
@@ -30,7 +30,7 @@ class Pages extends CI_Controller {
 	    	$this->load->view('technology/'.$page, $data);
 	    }
 	 
-
+//		$this->load->view('button', $data);
 	    
 	    $this->load->view('templates/footer', $data);
 	}
