@@ -118,8 +118,8 @@
 
 				
 				var margin = {top: 20, right: 200, bottom: 20, left: 200},
-					width = 960 - margin.right - margin.left,
-					height = 500 - margin.top - margin.bottom;
+					width = 1080 - margin.right - margin.left,
+					height = 600 - margin.top - margin.bottom;
 					
 				var i = 0,
 					duration = 750,
@@ -252,11 +252,30 @@
 				    } 
 				}); 
 				 	
-				  // console.log(nodes)
+				 circlesize();				  
+				 // console.log(nodes)
 				  			  
 				}
 
+				function circlesize(){
+					 d3.selectAll("g.node").filter(function (x) {
+					 		console.log(parseInt(x.title.replace( /^\D+/g, '')))
+					 		return (x.title.indexOf("success")!=-1 && 10<parseInt(x.title.replace( /^\D+/g, ''))&&parseInt(x.title.replace( /^\D+/g, ''))<100 )
+					 		                          	
+                            })
+                            .select("circle")
+                            .style("r", "12");
 
+					 d3.selectAll("g.node").filter(function (x) {
+					 		console.log(parseInt(x.title.replace( /^\D+/g, '')))
+					 		return (x.title.indexOf("success")!=-1 && 100<parseInt(x.title.replace( /^\D+/g, '')))
+					 		                          	
+                            })
+                            .select("circle")
+                            .style("r", "14");                     
+                            
+                        	
+				}
 				// Toggle children on click.
 
 				function highlightpath(a,id) {

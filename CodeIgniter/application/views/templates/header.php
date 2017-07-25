@@ -426,21 +426,73 @@
 		frame.contentWindow.postMessage(leafid, '*'); 
 
 
-		if (leafid%3==0)
-			$(".demo1").insertAfter(".demo3");
-		if(leafid%3==1)
-			$(".demo1").insertAfter(".demo2");	
-		if(leafid%3==2)
-			$(".demo2").insertAfter(".demo3");	
+		if(arrdata=="design"){
+			document.getElementById('success').href="<?php echo base_url();?>application/video/design/vid_"+(leafid%70).toString()+".mp4"
+			document.getElementById('unsuccess').href="<?php echo base_url();?>application/video/design/vid_"+(leafid%71).toString()+".mp4"
+		}
+		else{
+			if(arrdata="fashion"){
+			document.getElementById('success').href="<?php echo base_url();?>application/video/fashion/vid_"+(leafid%70).toString()+".mp4"
+			document.getElementById('unsuccess').href="<?php echo base_url();?>application/video/fashion/vid_"+(leafid%71).toString()+".mp4"				
+			}
+			else{
+			document.getElementById('success').href="<?php echo base_url();?>application/video/technology/vid_"+(leafid%70).toString()+".mp4"
+			document.getElementById('unsuccess').href="<?php echo base_url();?>application/video/technology/vid_"+(leafid%71).toString()+".mp4"				
+			}				
+			}
+		
+
+	}
+		
+	function report(period){
+		if (period=="") return;
+		if (period=="demo1"){
+			document.getElementById("R1").value = "5";
+			document.getElementById("PositiveMindset").innerHTML="5"
+		}
+		if (period=="demo2"){
+			document.getElementById("R2").value = "5";
+			document.getElementById("Duraion").innerHTML="5"
+		}
+		if (period=="demo3"){
+			document.getElementById("R3").value = "5";
+			document.getElementById("Involvement").innerHTML="5"
+		}
+		if (period=="demo4"){
+			document.getElementById("R4").value = "5";
+			document.getElementById("PurchaseIntent").innerHTML="5"
+		}
+		if (period=="demo5"){
+			document.getElementById("R5").value = "5";
+			document.getElementById("Creativity").innerHTML="5"
+		}
+		if (period=="demo6"){
+			document.getElementById("R6").value = "5";
+			document.getElementById("Relevance").innerHTML="5"
+		}
+		if (period=="demo7"){
+			document.getElementById("R7").value = "5";
+			document.getElementById("AVQuality").innerHTML="5"
+		}
+		if (period=="demo8"){
+			document.getElementById("R8").value = "5";
+			document.getElementById("Attitude").innerHTML="5"
+		}
+		if (period=="demo9"){
+			document.getElementById("R9").value = "5";
+			document.getElementById("Complexity").innerHTML="5"
+		}
+		
 	}
 
-
-
 	</script>
+   	
+
+   
 
   </head>
 
-  <body>
+  <body style="zoom: 0.95;">
 	<nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -459,21 +511,28 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-4  col-md-3  sidebar">
-
-		<form id="form1" method="post" onsubmit="return choose()"  name="form" >
-		  <label>field</label>
-		  <input type="text" name="field" id="uniqueID" value="" style="width: 150px"> 
-		  <input type="button" value="highlight" onclick="highlight();" >  
-		</form>
+		<div class="panel panel-default">
+		<div class="panel-heading">
+        	<i class="fa fa-bell "></i> Category
+        </div>		
+		<div class="panel-body " >
+			<form id="form1" method="post" onsubmit="return choose()"  name="form" >
+		  		<label>field</label>
+		  		<input type="text" name="field" id="uniqueID" value="" style="width: 150px"> 
+		  		<input type="button" value="highlight" onclick="highlight();" style="margin: 10px auto auto 60px">  
+			</form>      
+        </div>
+        </div>
+		
 		<div class="panel panel-default">
 		<div class="panel-heading">
         	<i class="fa fa-bell "></i> Features
         </div>		
-		<div class="panel-body ">
+		<div class="panel-body " >
           <ul class="nav nav-sidebar list-group">
-			<div id="li1">
-            <li><a href="#" id="hPositiveMindset" class="hvalue" onclick="feature_video()">PositiveMindset</a></li>
-                <input type="range" min="0" max="8" value="0" step="0.5" onchange="showValue1(this.value)" style="width: 200px;" />
+			<div id="li1" style="margin: 10px;">
+            <li><a href="#" id="hPositiveMindset" class="hvalue " onclick="feature_video()">PositiveMindset</a></li>
+                <input id= "R1" type="range" min="0" max="8" value="0" step="0.5" onchange="showValue1(this.value)" style="width: 200px;" />
                 <span id="PositiveMindset" >0</span>
                 <script type="text/javascript">
                 function showValue1(newValue)
@@ -482,9 +541,9 @@
                 }
                 </script>
              </div> 
-            <div id="li2">              
+            <div id="li2" style="margin: 10px;">              
             <li><a href="#" id="hDuraion" class="hvalue" onclick="feature_video()" >Duraion</a></li>
-                <input type="range" min="0" max="8" value="0" step="0.5" onchange="showValue2(this.value)" style="width: 200px" />
+                <input id= "R2" type="range" min="0" max="8" value="0" step="0.5" onchange="showValue2(this.value)" style="width: 200px" />
                 <span id="Duraion">0</span>
                 <script type="text/javascript">
                 function showValue2(newValue)
@@ -493,9 +552,9 @@
                 }
                 </script> 
             </div>
-            <div id="li3"> 
+            <div id="li3" style="margin: 10px;"> 
             <li><a href="#" id="hInvolvement" class="hvalue" onclick="feature_video()" >Involvement</a></li>
-                <input type="range" min="0" max="8" value="0" step="0.5" onchange="showValue3(this.value)" style="width: 200px" />
+                <input id="R3" type="range" min="0" max="8" value="0" step="0.5" onchange="showValue3(this.value)" style="width: 200px" />
                 <span id="Involvement">0</span>
                 <script type="text/javascript">
                 function showValue3(newValue)
@@ -504,9 +563,9 @@
                 }
                 </script>
             </div>
-            <div id="li4">
+            <div id="li4" style="margin: 10px;">
             <li><a href="#" id="hPurchaseIntent" class="hvalue" onclick="feature_video()" >PurchaseIntent </a></li>
-                <input type="range" min="0" max="8" value="0" step="0.5" onchange="showValue4(this.value)" style="width: 200px" />
+                <input id="R4" type="range" min="0" max="8" value="0" step="0.5" onchange="showValue4(this.value)" style="width: 200px" />
                 <span id="PurchaseIntent">0</span>
                 <script type="text/javascript">
                 function showValue4(newValue)
@@ -515,9 +574,9 @@
                 }
                 </script>
             </div>
-            <div id="li5">
+            <div id="li5" style="margin: 10px;">
             <li><a href="#" id="hCreativity" class="hvalue" onclick="feature_video()" >Creativity</a></li>
-                <input type="range" min="0" max="8" value="0" step="0.5" onchange="showValue5(this.value)" style="width: 200px" />
+                <input id="R5" type="range" min="0" max="8" value="0" step="0.5" onchange="showValue5(this.value)" style="width: 200px" />
                 <span id="Creativity">0</span>
                 <script type="text/javascript">
                 function showValue5(newValue)
@@ -526,9 +585,9 @@
                 }
                 </script>
             </div>
-            <div id="li6">
+            <div id="li6" style="margin: 10px;">
             <li><a href="#" id="hRelevance" class="hvalue" onclick="feature_video()" >Relevance</a></li>
-                <input type="range" min="0" max="8" value="0" step="0.5" onchange="showValue7(this.value)" style="width: 200px" />
+                <input id="R6" type="range" min="0" max="8" value="0" step="0.5" onchange="showValue7(this.value)" style="width: 200px" />
                 <span id="Relevance">0</span>
                 <script type="text/javascript">
                 function showValue7(newValue)
@@ -537,9 +596,9 @@
                 }               
                 </script>
             </div>
-            <div id="li7">
+            <div id="li7" style="margin: 10px;">
             <li><a href="#" id="hAVQuality" class="hvalue" onclick="feature_video()" >AVQuality</a></li>
-                <input type="range" min="0" max="8" value="0" step="0.5" onchange="showValue8(this.value)" style="width: 200px" />
+                <input id="R7" type="range" min="0" max="8" value="0" step="0.5" onchange="showValue8(this.value)" style="width: 200px" />
                 <span id="AVQuality">0</span>
                 <script type="text/javascript">
                 function showValue8(newValue)
@@ -548,9 +607,9 @@
                 }               
                 </script>
             </div>
-            <div id="li8"> 
+            <div id="li8" style="margin: 10px;"> 
             <li><a href="#" id="hAttitude" class="hvalue" onclick="feature_video()" >Attitude</a></li>
-                <input type="range" min="0" max="8" value="0" step="0.5" onchange="showValue9(this.value)" style="width: 200px" />
+                <input id="R8" type="range" min="0" max="8" value="0" step="0.5" onchange="showValue9(this.value)" style="width: 200px" />
                 <span id="Attitude">0</span>
                 <script type="text/javascript">
                 function showValue9(newValue)
@@ -559,10 +618,9 @@
                 }               
                 </script>
             </div>
-            <div id="li9">
-            <li><a href="#" id="hComplexity" class="hvalue" onclick="feature_video()" 
-            >Complexity</a></li>
-                <input type="range" min="0" max="8" value="0" step="0.5" onchange="showValue10(this.value)" style="width: 200px" />
+            <div id="li9" style="margin: 10px;">
+            <li><a href="#" id="hComplexity" class="hvalue" onclick="feature_video()" >Complexity</a></li>
+                <input id="R9" type="range" min="0" max="8" value="0" step="0.5" onchange="showValue10(this.value)" style="width: 200px" />
                 <span id="Complexity">0</span>
                 <script type="text/javascript">
                 function showValue10(newValue)
@@ -571,13 +629,38 @@
                 }               
                 </script>
             </div>  
+			<div class="clearfix"></div>
           </ul>
         </div>
         </div>
+        <div class="panel panel-default">
+		<div class="panel-heading">
+        	<i class="fa fa-bell "></i> upload
+        </div>		
+		<div class="panel-body " >
+			<form>
+			<select id="select" onchange="report(this.value)">
+			<option value="">Upload</option>
+			<option value="demo1">demo1</option>
+			<option value="demo2">demo2</option>
+			<option value="demo3">demo3</option>
+			<option value="demo4">demo4</option>
+			<option value="demo5">demo5</option>
+			<option value="demo6">demo6</option>
+			<option value="demo7">demo7</option>
+			<option value="demo8">demo8</option>
+			<option value="demo9">demo9</option>
+			</select>
+			</form>          
         </div>
+        </div>
+        </div>
+        
+        
+        
 
         <div class="col-sm-8 col-sm-offset-4 col-md-9 col-md-offset-3 main">
-          <h1 class="page-header">Tree Map</h1>
+          <h2 class="page-header">Tree Map</h2>
 
           
 

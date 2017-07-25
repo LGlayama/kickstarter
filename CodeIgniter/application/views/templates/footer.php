@@ -1,31 +1,31 @@
         <h2 class="sub-header">Demo Video</h2>
         
-        <div class="row placeholders">
+          <div class="row placeholders">
    
-           		<div class="col-xs-8 col-sm-4 placeholder demo1">
-              <a class="popup-player" href="<?php echo base_url();?>application/video/vid_1_design.mp4">
-               <img src="<?php echo base_url();?>application/video/1.png"  height="200" width="200">
+           	<div class="col-xs-12 col-sm-6 placeholder demo1">
+              <a class="popup-player" id="success" href="<?php echo base_url();?>application/video/vid_1_design.mp4">
+               <img src="<?php echo base_url();?>application/video/success.jpg"  height="150" width="200">
               </a>
 <!--               <video class="thumbnail" src="<?php echo base_url();?>application/video/vid_1_design.mp4" width="200" height="200" poster="<?php echo base_url();?>application/video/1.png" onclick="this.paused?this.play():this.pause();"/> -->
-              <h4>Demo1</h4>
-              <span class="text-muted">Something else</span>
+              <h4>Successful example video</h4>
+ 				<form method="post"   >
+		  			<label>comment</label>
+		  			<input type="text"   value="" style="width: 250px">  
+				</form>
             </div>
-            	<div class="col-xs-8 col-sm-4 placeholder demo2">
-              <a class="popup-player" href="<?php echo base_url();?>application/video/vid_1_fashion.mp4">
-               <img src="<?php echo base_url();?>application/video/2.png"  height="200" width="200">
+            
+            <div class="col-xs-12 col-sm-6 placeholder demo2">
+              <a class="popup-player" id="unsuccess" href="<?php echo base_url();?>application/video/vid_1_design.mp4">
+               <img src="<?php echo base_url();?>application/video/unsuccess.jpg"  height="150" width="200">
               </a>
 <!--              <video class="thumbnail" src="<?php echo base_url();?>application/video/vid_1_fashion.mp4" width="200" height="200" poster="<?php echo base_url();?>application/video/2.png" onclick="this.paused?this.play():this.pause();"/> -->
-              <h4>Demo2</h4>
-              <span class="text-muted">Something else</span>
+              <h4>Unsuccessful example video</h4>
+				<form method="post"   >
+		  			<label>comment</label>
+		  			<input type="text"   value="" style="width: 250px">  
+				</form>
             </div>
-            	<div class="col-xs-8 col-sm-4 placeholder demo3">
-              <a class="popup-player" href="<?php echo base_url();?>application/video/vid_5_technology.mp4">
-               <img src="<?php echo base_url();?>application/video/3.png"  height="200" width="200">
-              </a>
-<!--               <video class="thumbnail" src="<?php echo base_url();?>application/video/vid_5_technology.mp4" width="200" height="200" poster="<?php echo base_url();?>application/video/3.png" onclick="this.paused?this.play():this.pause();"/> -->
-              <h4>Demo3</h4>
-              <span class="text-muted">Something else</span>
-            </div>
+            	
             	
 			
           </div>
