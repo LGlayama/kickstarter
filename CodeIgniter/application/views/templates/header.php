@@ -447,40 +447,105 @@
 	function report(period){
 		if (period=="") return;
 		if (period=="demo1"){
-			document.getElementById("R1").value = "5";
-			document.getElementById("PositiveMindset").innerHTML="5"
+			document.getElementById("R1").value = "4.5";
+			document.getElementById("PositiveMindset").innerHTML="4.5";
+			document.getElementById("R2").value = "4";
+			document.getElementById("Duraion").innerHTML="4";
+			document.getElementById("R3").value = "5";
+			document.getElementById("Involvement").innerHTML="5";
+			document.getElementById("R4").value = "5";
+			document.getElementById("PurchaseIntent").innerHTML="5";
+			document.getElementById("R5").value = "4.5";
+			document.getElementById("Creativity").innerHTML="4.5";
+			document.getElementById("R6").value = "6";
+			document.getElementById("Relevance").innerHTML="6";
+			document.getElementById("R7").value = "5.5";
+			document.getElementById("AVQuality").innerHTML="5.5";
+			document.getElementById("R8").value = "5";
+			document.getElementById("Attitude").innerHTML="5";
+			document.getElementById("R9").value = "5.5";
+			document.getElementById("Complexity").innerHTML="5.5";
+			
 		}
 		if (period=="demo2"){
-			document.getElementById("R2").value = "5";
-			document.getElementById("Duraion").innerHTML="5"
+			document.getElementById("R1").value = "3.5";
+			document.getElementById("PositiveMindset").innerHTML="3.5";
+			document.getElementById("R2").value = "3";
+			document.getElementById("Duraion").innerHTML="3";
+			document.getElementById("R3").value = "5";
+			document.getElementById("Involvement").innerHTML="5";
+			document.getElementById("R4").value = "5";
+			document.getElementById("PurchaseIntent").innerHTML="5";
+			document.getElementById("R5").value = "5.5";
+			document.getElementById("Creativity").innerHTML="5.5";
+			document.getElementById("R6").value = "4.5";
+			document.getElementById("Relevance").innerHTML="4.5";
+			document.getElementById("R7").value = "4.5";
+			document.getElementById("AVQuality").innerHTML="4.5";
+			document.getElementById("R8").value = "6";
+			document.getElementById("Attitude").innerHTML="6";
+			document.getElementById("R9").value = "5";
+			document.getElementById("Complexity").innerHTML="5";
 		}
 		if (period=="demo3"){
-			document.getElementById("R3").value = "5";
-			document.getElementById("Involvement").innerHTML="5"
+			document.getElementById("R1").value = "3.5";
+			document.getElementById("PositiveMindset").innerHTML="3.5";
+			document.getElementById("R2").value = "2.5";
+			document.getElementById("Duraion").innerHTML="2.5";
+			document.getElementById("R3").value = "4.5";
+			document.getElementById("Involvement").innerHTML="4.5";
+			document.getElementById("R4").value = "4";
+			document.getElementById("PurchaseIntent").innerHTML="4";
+			document.getElementById("R5").value = "5";
+			document.getElementById("Creativity").innerHTML="5";
+			document.getElementById("R6").value = "5.5";
+			document.getElementById("Relevance").innerHTML="5.5";
+			document.getElementById("R7").value = "5";
+			document.getElementById("AVQuality").innerHTML="5";
+			document.getElementById("R8").value = "5.5";
+			document.getElementById("Attitude").innerHTML="5.5";
+			document.getElementById("R9").value = "5.5";
+			document.getElementById("Complexity").innerHTML="5.5";
 		}
 		if (period=="demo4"){
-			document.getElementById("R4").value = "5";
-			document.getElementById("PurchaseIntent").innerHTML="5"
+			document.getElementById("R1").value = "3.5";
+			document.getElementById("PositiveMindset").innerHTML="3.5";
+			document.getElementById("R2").value = "3";
+			document.getElementById("Duraion").innerHTML="3";
+			document.getElementById("R3").value = "5";
+			document.getElementById("Involvement").innerHTML="5";
+			document.getElementById("R4").value = "4.5";
+			document.getElementById("PurchaseIntent").innerHTML="4.5";
+			document.getElementById("R5").value = "4";
+			document.getElementById("Creativity").innerHTML="4";
+			document.getElementById("R6").value = "4.5";
+			document.getElementById("Relevance").innerHTML="4.5";
+			document.getElementById("R7").value = "3.5";
+			document.getElementById("AVQuality").innerHTML="3.5";
+			document.getElementById("R8").value = "5";
+			document.getElementById("Attitude").innerHTML="5";
+			document.getElementById("R9").value = "5";
+			document.getElementById("Complexity").innerHTML="5";
 		}
 		if (period=="demo5"){
-			document.getElementById("R5").value = "5";
-			document.getElementById("Creativity").innerHTML="5"
-		}
-		if (period=="demo6"){
-			document.getElementById("R6").value = "5";
-			document.getElementById("Relevance").innerHTML="5"
-		}
-		if (period=="demo7"){
-			document.getElementById("R7").value = "5";
-			document.getElementById("AVQuality").innerHTML="5"
-		}
-		if (period=="demo8"){
-			document.getElementById("R8").value = "5";
-			document.getElementById("Attitude").innerHTML="5"
-		}
-		if (period=="demo9"){
-			document.getElementById("R9").value = "5";
-			document.getElementById("Complexity").innerHTML="5"
+			document.getElementById("R1").value = "4";
+			document.getElementById("PositiveMindset").innerHTML="4";
+			document.getElementById("R2").value = "2.5";
+			document.getElementById("Duraion").innerHTML="2.5";
+			document.getElementById("R3").value = "5";
+			document.getElementById("Involvement").innerHTML="5";
+			document.getElementById("R4").value = "5";
+			document.getElementById("PurchaseIntent").innerHTML="5";
+			document.getElementById("R5").value = "5.5";
+			document.getElementById("Creativity").innerHTML="5.5";
+			document.getElementById("R6").value = "6";
+			document.getElementById("Relevance").innerHTML="6";
+			document.getElementById("R7").value = "5.5";
+			document.getElementById("AVQuality").innerHTML="5.5";
+			document.getElementById("R8").value = "6";
+			document.getElementById("Attitude").innerHTML="6";
+			document.getElementById("R9").value = "6";
+			document.getElementById("Complexity").innerHTML="6";
 		}
 		
 	}
@@ -646,10 +711,6 @@
 			<option value="demo3">demo3</option>
 			<option value="demo4">demo4</option>
 			<option value="demo5">demo5</option>
-			<option value="demo6">demo6</option>
-			<option value="demo7">demo7</option>
-			<option value="demo8">demo8</option>
-			<option value="demo9">demo9</option>
 			</select>
 			</form>          
         </div>
