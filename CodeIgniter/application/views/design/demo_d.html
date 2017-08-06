@@ -237,14 +237,15 @@
 
 				var lastleaf=-1
 				window.addEventListener('message', function(event) { 
-					
+					var tempvalue=event.data.split("+")
+					console.log(tempvalue)					
 				    // IMPORTANT: Check the origin of the data! 
 				    if (event.origin=="http://localhost") { 
 				    	if (lastleaf!=-1)
 				    		unhighlightpath(nodes,lastleaf)
 				    	
- 						highlightpath(nodes,event.data)	
- 						lastleaf=event.data 
+ 						highlightpath(nodes,parseInt(tempvalue[0]))	
+ 						lastleaf=parseInt(tempvalue[0]) 
 				    } else { 
 				        // The data hasn't been sent from your site! 
 				        // Be careful! Do not use it. 
@@ -253,13 +254,13 @@
 				}); 
 				 	
 				 circlesize();				  
-				 // console.log(nodes)
+				 
 				  			  
 				}
 
 				function circlesize(){
 					 d3.selectAll("g.node").filter(function (x) {
-					 		console.log(parseInt(x.title.replace( /^\D+/g, '')))
+					 		
 					 		return (x.title.indexOf("success")!=-1 && 10<parseInt(x.title.replace( /^\D+/g, ''))&&parseInt(x.title.replace( /^\D+/g, ''))<100 )
 					 		                          	
                             })
@@ -267,7 +268,7 @@
                             .style("r", "12");
 
 					 d3.selectAll("g.node").filter(function (x) {
-					 		console.log(parseInt(x.title.replace( /^\D+/g, '')))
+					 		
 					 		return (x.title.indexOf("success")!=-1 && 100<parseInt(x.title.replace( /^\D+/g, '')))
 					 		                          	
                             })

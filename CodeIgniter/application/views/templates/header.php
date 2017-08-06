@@ -115,7 +115,8 @@
 			lenold++;
 			
 	 	}
-		else {if (arrdata == "fashion"){
+		else {
+			if (arrdata == "fashion"){
 				document.getElementById('iframe').src="<?php echo base_url();?>application/views/fashion/demo_f.html";
 				var elem3 = document.getElementById('li9');
 				oldnode[lenold]=elem3.parentNode.removeChild(elem3);
@@ -124,16 +125,21 @@
 			
 			
 			else{
-				document.getElementById('iframe').src="<?php echo base_url();?>application/views/technology/demo_t.html";
-				var elem4 = document.getElementById('li2');
-				oldnode[lenold]=elem4.parentNode.removeChild(elem4);
-				lenold++;
-				var elem5 = document.getElementById('li6');
-				oldnode[lenold]=elem5.parentNode.removeChild(elem5);
-				lenold++;
-				var elem6 = document.getElementById('li8');
-				oldnode[lenold]=elem6.parentNode.removeChild(elem6);
-				lenold++;
+				if(arrdata == "technology"){
+					document.getElementById('iframe').src="<?php echo base_url();?>application/views/technology/demo_t.html";
+					var elem4 = document.getElementById('li2');
+					oldnode[lenold]=elem4.parentNode.removeChild(elem4);
+					lenold++;
+					var elem5 = document.getElementById('li6');
+					oldnode[lenold]=elem5.parentNode.removeChild(elem5);
+					lenold++;
+					var elem6 = document.getElementById('li8');
+					oldnode[lenold]=elem6.parentNode.removeChild(elem6);
+					lenold++;
+				}
+				else{
+					document.getElementById('iframe').src="<?php echo base_url();?>application/views/hex/demo_h.html";
+				}
 			}
 		}
 	 
@@ -168,6 +174,8 @@
 		}	
 
 	 	var leafid;
+		var trdata=new Array();
+		
 	 	if (arrdata == "design"){
 		 	if(score[6]<=3.125){
 				document.getElementById("hAVQuality").style.color='orange'
@@ -420,10 +428,25 @@
 		}
 
 
-		console.log(leafid);
-		var frame = document.getElementById('iframe'); 
+		
+		var frame = document.getElementById('iframe');
+		
+		trdata[0]=leafid;
+		trdata[1]= parseFloat(score[0]);
+		trdata[2]= parseFloat(score[1]);
+		trdata[3]= parseFloat(score[2]);
+		trdata[4]= parseFloat(score[3]);
+		trdata[5]= parseFloat(score[4]);
+		trdata[6]= parseFloat(score[5]);
+		trdata[7]= parseFloat(score[6]);
+		trdata[8]= parseFloat(score[7]);
+		trdata[9]= parseFloat(score[8]);
+		
+		var tt=leafid.toString()+"+"+score[0]+"+"+score[1]+"+"+score[2]+"+"+score[3]+"+"+score[4]+"+"+score[5]+"+"+score[6]+"+"+score[7]+"+"+score[8]
 
-		frame.contentWindow.postMessage(leafid, '*'); 
+		
+		console.log(tt);
+		frame.contentWindow.postMessage(tt, '*'); 
 
 
 		if(arrdata=="design"){
@@ -447,109 +470,215 @@
 	function report(period){
 		if (period=="") return;
 		if (period=="demo1"){
-			document.getElementById("R1").value = "4.5";
-			document.getElementById("PositiveMindset").innerHTML="4.5";
-			document.getElementById("R2").value = "4";
-			document.getElementById("Duraion").innerHTML="4";
-			document.getElementById("R3").value = "5";
-			document.getElementById("Involvement").innerHTML="5";
-			document.getElementById("R4").value = "5";
-			document.getElementById("PurchaseIntent").innerHTML="5";
-			document.getElementById("R5").value = "4.5";
-			document.getElementById("Creativity").innerHTML="4.5";
-			document.getElementById("R6").value = "6";
-			document.getElementById("Relevance").innerHTML="6";
-			document.getElementById("R7").value = "5.5";
-			document.getElementById("AVQuality").innerHTML="5.5";
-			document.getElementById("R8").value = "5";
-			document.getElementById("Attitude").innerHTML="5";
-			document.getElementById("R9").value = "5.5";
-			document.getElementById("Complexity").innerHTML="5.5";
-			
+			if(document.getElementById("R1")!=null){
+				document.getElementById("R1").value = "4.5";
+				document.getElementById("PositiveMindset").innerHTML="4.5";
+			}
+			if(document.getElementById("R2")!=null){
+				document.getElementById("R2").value = "4";
+				document.getElementById("Duraion").innerHTML="4";
+			}
+			if(document.getElementById("R3")!=null){
+				document.getElementById("R3").value = "5";
+				document.getElementById("Involvement").innerHTML="5";
+			}
+			if(document.getElementById("R4")!=null){
+				document.getElementById("R4").value = "5";
+				document.getElementById("PurchaseIntent").innerHTML="5";
+			}
+			if(document.getElementById("R5")!=null){
+				document.getElementById("R5").value = "4.5";
+				document.getElementById("Creativity").innerHTML="4.5";
+			}
+			if(document.getElementById("R6")!=null){
+				document.getElementById("R6").value = "6";
+				document.getElementById("Relevance").innerHTML="6";
+			}
+			if(document.getElementById("R7")!=null){
+				document.getElementById("R7").value = "5.5";
+				document.getElementById("AVQuality").innerHTML="5.5";
+			}
+			if(document.getElementById("R8")!=null){
+				document.getElementById("R8").value = "5";
+				document.getElementById("Attitude").innerHTML="5";
+			}
+			if(document.getElementById("R9")!=null){
+				document.getElementById("R9").value = "5.5";
+				document.getElementById("Complexity").innerHTML="5.5";
+			}
 		}
 		if (period=="demo2"){
-			document.getElementById("R1").value = "3.5";
-			document.getElementById("PositiveMindset").innerHTML="3.5";
-			document.getElementById("R2").value = "3";
-			document.getElementById("Duraion").innerHTML="3";
-			document.getElementById("R3").value = "5";
-			document.getElementById("Involvement").innerHTML="5";
-			document.getElementById("R4").value = "5";
-			document.getElementById("PurchaseIntent").innerHTML="5";
-			document.getElementById("R5").value = "5.5";
-			document.getElementById("Creativity").innerHTML="5.5";
-			document.getElementById("R6").value = "4.5";
-			document.getElementById("Relevance").innerHTML="4.5";
-			document.getElementById("R7").value = "4.5";
-			document.getElementById("AVQuality").innerHTML="4.5";
-			document.getElementById("R8").value = "6";
-			document.getElementById("Attitude").innerHTML="6";
-			document.getElementById("R9").value = "5";
-			document.getElementById("Complexity").innerHTML="5";
+			if(document.getElementById("R1")!=null){
+				document.getElementById("R1").value = "3.5";
+				document.getElementById("PositiveMindset").innerHTML="3.5";
+			}
+			if(document.getElementById("R2")!=null){
+				document.getElementById("R2").value = "3";
+				document.getElementById("Duraion").innerHTML="3";
+			}
+			if(document.getElementById("R3")!=null){
+				document.getElementById("R3").value = "5";
+				document.getElementById("Involvement").innerHTML="5";
+			}
+			if(document.getElementById("R4")!=null){
+				document.getElementById("R4").value = "5";
+				document.getElementById("PurchaseIntent").innerHTML="5";
+			}
+			if(document.getElementById("R5")!=null){
+				document.getElementById("R5").value = "5.5";
+				document.getElementById("Creativity").innerHTML="5.5";
+			}
+			if(document.getElementById("R6")!=null){
+				document.getElementById("R6").value = "4.5";
+				document.getElementById("Relevance").innerHTML="4.5";
+			}
+			if(document.getElementById("R7")!=null){
+				document.getElementById("R7").value = "4.5";
+				document.getElementById("AVQuality").innerHTML="4.5";
+			}
+			if(document.getElementById("R8")!=null){
+				document.getElementById("R8").value = "6";
+				document.getElementById("Attitude").innerHTML="6";
+			}
+			if(document.getElementById("R9")!=null){
+				document.getElementById("R9").value = "5";
+				document.getElementById("Complexity").innerHTML="5";
+			}
 		}
 		if (period=="demo3"){
-			document.getElementById("R1").value = "3.5";
-			document.getElementById("PositiveMindset").innerHTML="3.5";
-			document.getElementById("R2").value = "2.5";
-			document.getElementById("Duraion").innerHTML="2.5";
-			document.getElementById("R3").value = "4.5";
-			document.getElementById("Involvement").innerHTML="4.5";
-			document.getElementById("R4").value = "4";
-			document.getElementById("PurchaseIntent").innerHTML="4";
-			document.getElementById("R5").value = "5";
-			document.getElementById("Creativity").innerHTML="5";
-			document.getElementById("R6").value = "5.5";
-			document.getElementById("Relevance").innerHTML="5.5";
-			document.getElementById("R7").value = "5";
-			document.getElementById("AVQuality").innerHTML="5";
-			document.getElementById("R8").value = "5.5";
-			document.getElementById("Attitude").innerHTML="5.5";
-			document.getElementById("R9").value = "5.5";
-			document.getElementById("Complexity").innerHTML="5.5";
+			if(document.getElementById("R1")!=null){
+				document.getElementById("R1").value = "3.5";
+				document.getElementById("PositiveMindset").innerHTML="3.5";
+			}
+			if(document.getElementById("R2")!=null){
+				document.getElementById("R2").value = "2.5";
+				document.getElementById("Duraion").innerHTML="2.5";
+			}
+			if(document.getElementById("R3")!=null){
+				document.getElementById("R3").value = "4.5";
+				document.getElementById("Involvement").innerHTML="4.5";
+			}
+			if(document.getElementById("R4")!=null){
+				document.getElementById("R4").value = "4";
+				document.getElementById("PurchaseIntent").innerHTML="4";
+			}
+			if(document.getElementById("R5")!=null){
+				document.getElementById("R5").value = "5";
+				document.getElementById("Creativity").innerHTML="5";
+			}
+			if(document.getElementById("R6")!=null){
+				document.getElementById("R6").value = "5.5";
+				document.getElementById("Relevance").innerHTML="5.5";
+			}
+			if(document.getElementById("R7")!=null){
+				document.getElementById("R7").value = "5";
+				document.getElementById("AVQuality").innerHTML="5";
+			}
+			if(document.getElementById("R8")!=null){
+				document.getElementById("R8").value = "5.5";
+				document.getElementById("Attitude").innerHTML="5.5";
+			}
+			if(document.getElementById("R9")!=null){
+				document.getElementById("R9").value = "5.5";
+				document.getElementById("Complexity").innerHTML="5.5";
+			}
 		}
 		if (period=="demo4"){
-			document.getElementById("R1").value = "3.5";
-			document.getElementById("PositiveMindset").innerHTML="3.5";
-			document.getElementById("R2").value = "3";
-			document.getElementById("Duraion").innerHTML="3";
-			document.getElementById("R3").value = "5";
-			document.getElementById("Involvement").innerHTML="5";
-			document.getElementById("R4").value = "4.5";
-			document.getElementById("PurchaseIntent").innerHTML="4.5";
-			document.getElementById("R5").value = "4";
-			document.getElementById("Creativity").innerHTML="4";
-			document.getElementById("R6").value = "4.5";
-			document.getElementById("Relevance").innerHTML="4.5";
-			document.getElementById("R7").value = "3.5";
-			document.getElementById("AVQuality").innerHTML="3.5";
-			document.getElementById("R8").value = "5";
-			document.getElementById("Attitude").innerHTML="5";
-			document.getElementById("R9").value = "5";
-			document.getElementById("Complexity").innerHTML="5";
+			if(document.getElementById("R1")!=null){
+				document.getElementById("R1").value = "3.5";
+				document.getElementById("PositiveMindset").innerHTML="3.5";
+			}
+			if(document.getElementById("R2")!=null){
+				document.getElementById("R2").value = "3";
+				document.getElementById("Duraion").innerHTML="3";
+			}
+			if(document.getElementById("R3")!=null){
+				document.getElementById("R3").value = "5";
+				document.getElementById("Involvement").innerHTML="5";
+			}
+			if(document.getElementById("R4")!=null){
+				document.getElementById("R4").value = "4.5";
+				document.getElementById("PurchaseIntent").innerHTML="4.5";
+			}
+			if(document.getElementById("R5")!=null){
+				document.getElementById("R5").value = "4";
+				document.getElementById("Creativity").innerHTML="4";
+			}
+			if(document.getElementById("R6")!=null){
+				document.getElementById("R6").value = "4.5";
+				document.getElementById("Relevance").innerHTML="4.5";
+			}
+			if(document.getElementById("R7")!=null){
+				document.getElementById("R7").value = "3.5";
+				document.getElementById("AVQuality").innerHTML="3.5";
+			}
+			if(document.getElementById("R8")!=null){
+				document.getElementById("R8").value = "5";
+				document.getElementById("Attitude").innerHTML="5";
+			}
+			if(document.getElementById("R9")!=null){
+				document.getElementById("R9").value = "5";
+				document.getElementById("Complexity").innerHTML="5";
+			}
 		}
 		if (period=="demo5"){
-			document.getElementById("R1").value = "4";
-			document.getElementById("PositiveMindset").innerHTML="4";
-			document.getElementById("R2").value = "2.5";
-			document.getElementById("Duraion").innerHTML="2.5";
-			document.getElementById("R3").value = "5";
-			document.getElementById("Involvement").innerHTML="5";
-			document.getElementById("R4").value = "5";
-			document.getElementById("PurchaseIntent").innerHTML="5";
-			document.getElementById("R5").value = "5.5";
-			document.getElementById("Creativity").innerHTML="5.5";
-			document.getElementById("R6").value = "6";
-			document.getElementById("Relevance").innerHTML="6";
-			document.getElementById("R7").value = "5.5";
-			document.getElementById("AVQuality").innerHTML="5.5";
-			document.getElementById("R8").value = "6";
-			document.getElementById("Attitude").innerHTML="6";
-			document.getElementById("R9").value = "6";
-			document.getElementById("Complexity").innerHTML="6";
+			if(document.getElementById("R1")!=null){
+				document.getElementById("R1").value = "4";
+				document.getElementById("PositiveMindset").innerHTML="4";
+			}
+			if(document.getElementById("R2")!=null){
+				document.getElementById("R2").value = "2.5";
+				document.getElementById("Duraion").innerHTML="2.5";
+			}
+			if(document.getElementById("R3")!=null){
+				document.getElementById("R3").value = "5";
+				document.getElementById("Involvement").innerHTML="5";
+			}
+			if(document.getElementById("R4")!=null){
+				document.getElementById("R4").value = "5";
+				document.getElementById("PurchaseIntent").innerHTML="5";
+			}
+			if(document.getElementById("R5")!=null){
+				document.getElementById("R5").value = "5.5";
+				document.getElementById("Creativity").innerHTML="5.5";
+			}
+			if(document.getElementById("R6")!=null){
+				document.getElementById("R6").value = "6";
+				document.getElementById("Relevance").innerHTML="6";
+			}
+			if(document.getElementById("R7")!=null){
+				document.getElementById("R7").value = "5.5";
+				document.getElementById("AVQuality").innerHTML="5.5";
+			}
+			if(document.getElementById("R8")!=null){
+				document.getElementById("R8").value = "6";
+				document.getElementById("Attitude").innerHTML="6";
+			}
+			if(document.getElementById("R9")!=null){
+				document.getElementById("R9").value = "6";
+				document.getElementById("Complexity").innerHTML="6";
+			}
 		}
 		
 	}
 
+	</script>
+  	
+  	<script>
+		var Node = function (key) {
+    		this.key = key;
+    		this.left = null;
+    		this.right = null;
+  		};
+		
+		var insertleftNode = function (node, newNode) {
+    		
+      		if (node.left === null) {
+				node.left = newNode;
+			} else {
+        		insertNode(node.left, newNode);
+      		}
+  		};		
 	</script>
    	
 
@@ -597,7 +726,7 @@
           <ul class="nav nav-sidebar list-group">
 			<div id="li1" style="margin: 10px;">
             <li><a href="#" id="hPositiveMindset" class="hvalue " onclick="feature_video()">PositiveMindset</a></li>
-                <input id= "R1" type="range" min="0" max="8" value="0" step="0.5" onchange="showValue1(this.value)" style="width: 200px;" />
+                <input id= "R1" type="range" min="0" max="7" value="0" step="0.5" onchange="showValue1(this.value)" style="width: 200px;" />
                 <span id="PositiveMindset" >0</span>
                 <script type="text/javascript">
                 function showValue1(newValue)
@@ -608,7 +737,7 @@
              </div> 
             <div id="li2" style="margin: 10px;">              
             <li><a href="#" id="hDuraion" class="hvalue" onclick="feature_video()" >Duraion</a></li>
-                <input id= "R2" type="range" min="0" max="8" value="0" step="0.5" onchange="showValue2(this.value)" style="width: 200px" />
+                <input id= "R2" type="range" min="0" max="7" value="0" step="0.5" onchange="showValue2(this.value)" style="width: 200px" />
                 <span id="Duraion">0</span>
                 <script type="text/javascript">
                 function showValue2(newValue)
@@ -619,7 +748,7 @@
             </div>
             <div id="li3" style="margin: 10px;"> 
             <li><a href="#" id="hInvolvement" class="hvalue" onclick="feature_video()" >Involvement</a></li>
-                <input id="R3" type="range" min="0" max="8" value="0" step="0.5" onchange="showValue3(this.value)" style="width: 200px" />
+                <input id="R3" type="range" min="0" max="7" value="0" step="0.5" onchange="showValue3(this.value)" style="width: 200px" />
                 <span id="Involvement">0</span>
                 <script type="text/javascript">
                 function showValue3(newValue)
@@ -630,7 +759,7 @@
             </div>
             <div id="li4" style="margin: 10px;">
             <li><a href="#" id="hPurchaseIntent" class="hvalue" onclick="feature_video()" >PurchaseIntent </a></li>
-                <input id="R4" type="range" min="0" max="8" value="0" step="0.5" onchange="showValue4(this.value)" style="width: 200px" />
+                <input id="R4" type="range" min="0" max="7" value="0" step="0.5" onchange="showValue4(this.value)" style="width: 200px" />
                 <span id="PurchaseIntent">0</span>
                 <script type="text/javascript">
                 function showValue4(newValue)
@@ -641,7 +770,7 @@
             </div>
             <div id="li5" style="margin: 10px;">
             <li><a href="#" id="hCreativity" class="hvalue" onclick="feature_video()" >Creativity</a></li>
-                <input id="R5" type="range" min="0" max="8" value="0" step="0.5" onchange="showValue5(this.value)" style="width: 200px" />
+                <input id="R5" type="range" min="0" max="7" value="0" step="0.5" onchange="showValue5(this.value)" style="width: 200px" />
                 <span id="Creativity">0</span>
                 <script type="text/javascript">
                 function showValue5(newValue)
@@ -652,7 +781,7 @@
             </div>
             <div id="li6" style="margin: 10px;">
             <li><a href="#" id="hRelevance" class="hvalue" onclick="feature_video()" >Relevance</a></li>
-                <input id="R6" type="range" min="0" max="8" value="0" step="0.5" onchange="showValue7(this.value)" style="width: 200px" />
+                <input id="R6" type="range" min="0" max="7" value="0" step="0.5" onchange="showValue7(this.value)" style="width: 200px" />
                 <span id="Relevance">0</span>
                 <script type="text/javascript">
                 function showValue7(newValue)
@@ -663,7 +792,7 @@
             </div>
             <div id="li7" style="margin: 10px;">
             <li><a href="#" id="hAVQuality" class="hvalue" onclick="feature_video()" >AVQuality</a></li>
-                <input id="R7" type="range" min="0" max="8" value="0" step="0.5" onchange="showValue8(this.value)" style="width: 200px" />
+                <input id="R7" type="range" min="0" max="7" value="0" step="0.5" onchange="showValue8(this.value)" style="width: 200px" />
                 <span id="AVQuality">0</span>
                 <script type="text/javascript">
                 function showValue8(newValue)
@@ -674,7 +803,7 @@
             </div>
             <div id="li8" style="margin: 10px;"> 
             <li><a href="#" id="hAttitude" class="hvalue" onclick="feature_video()" >Attitude</a></li>
-                <input id="R8" type="range" min="0" max="8" value="0" step="0.5" onchange="showValue9(this.value)" style="width: 200px" />
+                <input id="R8" type="range" min="0" max="7" value="0" step="0.5" onchange="showValue9(this.value)" style="width: 200px" />
                 <span id="Attitude">0</span>
                 <script type="text/javascript">
                 function showValue9(newValue)
@@ -685,7 +814,7 @@
             </div>
             <div id="li9" style="margin: 10px;">
             <li><a href="#" id="hComplexity" class="hvalue" onclick="feature_video()" >Complexity</a></li>
-                <input id="R9" type="range" min="0" max="8" value="0" step="0.5" onchange="showValue10(this.value)" style="width: 200px" />
+                <input id="R9" type="range" min="0" max="7" value="0" step="0.5" onchange="showValue10(this.value)" style="width: 200px" />
                 <span id="Complexity">0</span>
                 <script type="text/javascript">
                 function showValue10(newValue)

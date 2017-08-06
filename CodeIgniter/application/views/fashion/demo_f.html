@@ -158,7 +158,7 @@
 				  var node = svg.selectAll("g.node")
 					  .data(nodes, function(d) { return d.id || (d.id = ++i); });
 
-				  console.log(nodes)
+				
 				  // Enter any new nodes at the parent's previous position.
 				  var nodeEnter = node.enter().append("g")
 					  .attr("class", "node")
@@ -237,14 +237,15 @@
 
 				var lastleaf=-1
 				window.addEventListener('message', function(event) { 
-					console.log(event.origin)
+					var tempvalue=event.data.split("+")
 				    // IMPORTANT: Check the origin of the data! 
 				    if (event.origin=="http://localhost") { 
 				    	if (lastleaf!=-1)
 				    		unhighlightpath(nodes,lastleaf)
-				    	console.log(event.data)
- 						highlightpath(nodes,event.data)	
- 						lastleaf=event.data 
+				    	console.log(tempvalue[0])
+						
+ 						highlightpath(nodes,parseInt(tempvalue[0]))	
+ 						lastleaf=parseInt(tempvalue[0]) 
 				    } else { 
 				        // The data hasn't been sent from your site! 
 				        // Be careful! Do not use it. 
@@ -253,14 +254,14 @@
 				}); 
 
 				 circlesize();					 	
-				  // console.log(nodes)
+				  
 				  			  
 				}
 
 
 				function circlesize(){
 					 d3.selectAll("g.node").filter(function (x) {
-					 		console.log(parseInt(x.title.replace( /^\D+/g, '')))
+					 		
 					 		return (x.title.indexOf("success")!=-1 && 10<parseInt(x.title.replace( /^\D+/g, ''))&&parseInt(x.title.replace( /^\D+/g, ''))<100 )
 					 		                          	
                             })
@@ -268,7 +269,7 @@
                             .style("r", "12");
 
 					 d3.selectAll("g.node").filter(function (x) {
-					 		console.log(parseInt(x.title.replace( /^\D+/g, '')))
+					 		
 					 		return (x.title.indexOf("success")!=-1 && 100<parseInt(x.title.replace( /^\D+/g, '')))
 					 		                          	
                             })
@@ -287,7 +288,7 @@
                     }
 
                     parentLine = function (d) {
-                        console.log(d)
+                       
                         d3.selectAll("g.node").filter(function (x) {
                             return x.id == d.id
                         })
@@ -320,7 +321,7 @@
                     }
 
                     parentLine = function (d) {
-                        console.log(d)
+                        
                         d3.selectAll("g.node").filter(function (x) {
                             return x.id == d.id
                         })

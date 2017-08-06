@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Hex Chart</title>
+        <link rel="shortcut icon" href="icon.png" />
+
+        <script src="hexagon-chart.js"></script>
+        <link rel="stylesheet" type="text/css" href="bootstrap3/css/bootstrap.min.css">
+
+        <style>
+        body,li {
+            font-family : 微软雅黑,-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        }
+
+        #base_container {
+            padding: 100px
+        }
+
+        </style>
+    </head>
+    <body>
+        <div id="base_container" class="container-fluid text-center">
+
+            <div class="col-md-6">
+                <canvas id="demo"></canvas>
+            </div>
+
+            <div class="col-md-6">
+
+            <button class="btn btn-lg btn-info btn-block" onclick="fresh()">Submit</button>
+            </div>
+
+        </div>
+
+    </body>
+    <script type="text/javascript">
+            var val1 = 0.0;
+            var val2 = 0.0;
+            var val3 = 0.0;
+            var val4 = 0.0;
+            var val5 = 0.0;
+            var val6 = 0.0;
+            var val7 = 0.0;
+            var val8 = 0.0;
+
+			
+            var old1=0.0;
+            var old2=0.0;
+            var old3=0.0;
+            var old4=0.0;
+            var old5=0.0;
+            var old6=0.0;
+            var old7=0.0;
+            var old8=0.0;
+
+			
+			window.addEventListener('message', function(event) { 
+				var tempvalue=event.data.split("+")
+				console.log(tempvalue)
+				
+				// IMPORTANT: Check the origin of the data! 
+				if (event.origin=="http://localhost") { 
+                	val1 = parseInt(tempvalue[1]) / 7;
+					val2 = parseInt(tempvalue[2]) / 7;
+                	val3 = parseInt(tempvalue[3]) / 7;
+                	val4 = parseInt(tempvalue[4]) / 7;
+                	val5 = parseInt(tempvalue[5]) / 7;
+                	val6 = parseInt(tempvalue[6]) / 7;
+					val7 = parseInt(tempvalue[7]) / 7;
+					val8 = parseInt(tempvalue[8]) / 7;
+					
+				} else { 
+				    // The data hasn't been sent from your site! 
+				    // Be careful! Do not use it. 
+				    return; 
+				} 
+			});             
+					
+        </script>
+
+    <script>
+            function getValueByID(id) {
+                return document.getElementById(id).value;
+            }
+
+            function fresh() {
+
+
+                hexagon.init('demo', 180, ['PU', 'SQ', 'PL', 'LR', 'BR', 'HU','AB','CD']);
+                hexagon.draw([val1, val2, val3, val4, val5, val6,val7,val8]);
+                // hexagon.draw([old1, old2, old3, old4, old5, old6,old7,old8]);
+
+
+                old1=val1;
+                old2=val2;
+                old3=val3;
+                old4=val4;
+                old5=val5;
+                old6=val6;
+                old7=val7;
+                old8=val8;
+
+               
+            }
+
+
+
+			
+			fresh ();
+
+        </script>
+</html>
+			
