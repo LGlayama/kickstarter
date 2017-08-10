@@ -177,17 +177,17 @@
 					document.getElementById("hDuraion").style.color='orange'
 					if(score[1]<=1.25){
 						document.getElementById("hDuraion").style.color='orange'
-						leafid=397;
+						leafid=7;
 					}
 					else{
 						document.getElementById("hDuraion").style.color='orange'
 						if(score[6]<=1.755){
 							document.getElementById("hAVQuality").style.color='orange'
-							leafid=405;	
+							leafid=15;	
 						}
 						else{
 							document.getElementById("hAVQuality").style.color='orange'
-							leafid=406;
+							leafid=16;
 						}
 					}
 				}
@@ -195,17 +195,17 @@
 					document.getElementById("hDuraion").style.color='orange'
 					if(score[2]<=1.6875){
 						document.getElementById("hInvolvement").style.color='orange'
-						leafid=399;
+						leafid=9;
 					}
 					else{
 						document.getElementById("hInvolvement").style.color='orange'
 						if(score[8]<=1.5){
 							document.getElementById("hComplexity").style.color='orange'
-							leafid=407;
+							leafid=17;
 						}
 						else{
 							document.getElementById("hComplexity").style.color='orange'
-							leafid=408;
+							leafid=18;
 						}
 					}
 					
@@ -219,22 +219,22 @@
 						document.getElementById("hAVQuality").style.color='orange'
 						if(score[7]<=3.875){
 							document.getElementById("hAttitude").style.color='orange'
-							leafid=409;
+							leafid=19;
 						}
 						else{
 							document.getElementById("hAttitude").style.color='orange'
-							leafid=410;
+							leafid=20;
 						}
 					}
 					else{
 						document.getElementById("hAVQuality").style.color='orange'
 						if(score[7]<=3.625){
 							document.getElementById("hAttitude").style.color='orange'
-							leafid=411;
+							leafid=21;
 						}
 						else{
 							document.getElementById("hAttitude").style.color='orange'
-							leafid=412;
+							leafid=22;
 						}					
 					}
 				}
@@ -242,11 +242,11 @@
 					document.getElementById("hDuraion").style.color='orange'
 					if(score[4]<=3.75){
 						document.getElementById("hCreativity").style.color='orange'
-						leafid=403;
+						leafid=13;
 					}
 					else{
 						document.getElementById("hCreativity").style.color='orange'
-						leafid=404;
+						leafid=14;
 					}
 				}
 			}
@@ -258,17 +258,17 @@
 					document.getElementById("hRelevance").style.color='orange'
 					if(score[3]<=1.5){
 						document.getElementById("hPurchaseIntent").style.color='orange'
-						leafid=420;
+						leafid=30;
 					}
 					else{
 						document.getElementById("hPurchaseIntent").style.color='orange'
 						if(score[2]<=1.5625){
 							document.getElementById("hInvolvement").style.color='orange'
-							leafid=428;	
+							leafid=38;	
 						}
 						else{
 							document.getElementById("hInvolvement").style.color='orange'
-							leafid=429;
+							leafid=39;
 						}
 					}
 				}
@@ -278,22 +278,22 @@
 						document.getElementById("hAttitude").style.color='orange'
 						if(score[4]<=3.75){
 							document.getElementById("hCreativity").style.color='orange'
-							leafid=430;
+							leafid=40;
 						}
 						else{
 							document.getElementById("hCreativity").style.color='orange'
-							leafid=431;
+							leafid=41;
 						}
 					}
 					else{
 						document.getElementById("hAttitude").style.color='orange'
 						if(score[2]<=2.0625){
 							document.getElementById("hInvolvement").style.color='orange'
-							leafid=432;
+							leafid=42;
 						}
 						else{
 							document.getElementById("hInvolvement").style.color='orange'
-							leafid=433;
+							leafid=43;
 						}					
 					}
 				}
@@ -306,22 +306,22 @@
 							document.getElementById("hDuraion").style.color='orange'						
 							if(score[2]<=4.0625){
 								document.getElementById("hInvolvement").style.color='orange'							
-								leafid=434;
+								leafid=44;
 							}
 							else{
 								document.getElementById("hInvolvement").style.color='orange'
-								leafid=435;
+								leafid=45;
 							}
 						}
 						else{
 							document.getElementById("hDuraion").style.color='orange'						
 							if(score[3]<=5.5){
 								document.getElementById("hPurchaseIntent").style.color='orange'
-								leafid=436;
+								leafid=46;
 							}
 							else{
 								document.getElementById("hPurchaseIntent").style.color='orange'
-								leafid=437;
+								leafid=47;
 							}						
 						}
 					}
@@ -329,11 +329,11 @@
 					document.getElementById("hRelevance").style.color='orange'				
 						if(score[6]<=5.625){
 							document.getElementById("hAVQuality").style.color='orange'
-							leafid=426;
+							leafid=36;
 						}
 						else{
 							document.getElementById("hAVQuality").style.color='orange'
-							leafid=427;
+							leafid=37;
 						}					
 					}
 			}
@@ -345,11 +345,11 @@
 					document.getElementById("hCreativity").style.color='orange'
 					if(score[7]<=6.375){
 						document.getElementById("hAttitude").style.color='orange'
-						leafid=445;
+						leafid=55;
 					}
 					else{
 						document.getElementById("hAttitude").style.color='orange'
-						leafid=446;
+						leafid=56;
 					}
 				}
 				else{
@@ -358,16 +358,16 @@
 						document.getElementById("hCreativity").style.color='orange'
 						if(score[7]<=5.125){
 							document.getElementById("hAttitude").style.color='orange'
-							leafid=453;
+							leafid=63;
 						}
 						else{
 							document.getElementById("hAttitude").style.color='orange'
-							leafid=454;
+							leafid=64;
 						}
 					}
 					else{
 						document.getElementById("hCreativity").style.color='orange'
-						leafid=448;
+						leafid=58;
 					}
 				}
 			}
@@ -381,22 +381,22 @@
 						document.getElementById("hRelevance").style.color='orange'
 						if(score[5]<=1.75){
 							document.getElementById("hRelevance").style.color='orange'
-							leafid=455;
+							leafid=65;
 						}
 						else{
 							document.getElementById("hRelevance").style.color='orange'
-							leafid=456;
+							leafid=66;
 						}
 					}
 					else{
 						document.getElementById("hRelevance").style.color='orange'
 						if(score[1]<=1.75){
 							document.getElementById("hDuraion").style.color='orange'
-							leafid=457;
+							leafid=67;
 						}
 						else{
 							document.getElementById("hDuraion").style.color='orange'
-							leafid=458;
+							leafid=68;
 						}										
 					}
 				}
@@ -404,17 +404,17 @@
 					document.getElementById("hAVQuality").style.color='orange'
 					if(score[8]<=3.5){
 						document.getElementById("hComplexity").style.color='orange'
-						leafid=451;
+						leafid=61;
 					}
 					else{
 						document.getElementById("hComplexity").style.color='orange'
 						if(score[3]<=6.5){
 							document.getElementById("hPurchaseIntent").style.color='orange'
-							leafid=459;
+							leafid=69;
 						}
 						else{
 							document.getElementById("hPurchaseIntent").style.color='orange'
-							leafid=460;
+							leafid=70;
 						}					
 					}
 				}
@@ -445,39 +445,39 @@
 
 		if(arrdata=="design"){
 			switch (leafid){
-				case 397:
+				case 7:
 					vnum=1;
-				case 405:
+				case 15:
   					vnum=36;
   					break;
-				case 406:
+				case 16:
   					vnum=2
   					break;
-				case 399:
+				case 9:
   					vnum=3
   					break;
-				case 407:
+				case 17:
   					vnum=37
   					break;
-				case 408:
+				case 18:
   					vnum=4
   					break;
-				case 409:
+				case 19:
   					vnum=38
   					break;
-				case 410:
+				case 20:
   					vnum=5
   					break;
-				case 411:
+				case 21:
   					vnum=6
   					break;
-				case 412:
+				case 22:
   					vnum=39
   					break;
-				case 403:
+				case 13:
   					vnum=40
   					break;
-				case 404:
+				case 14:
   					vnum=7
   					break;
 			}
@@ -487,42 +487,42 @@
 		else{
 			if(arrdata="fashion"){
 			switch (leafid){
-				case 420:
+				case 30:
 					vnum=1;
-				case 428:
+				case 38:
   					vnum=36;
   					break;
-				case 429:
+				case 39:
   					vnum=2
   					break;
-				case 430:
+				case 40:
   					vnum=37
   					break;
-				case 431:
+				case 41:
   					vnum=3
   					break;
-				case 432:
+				case 42:
   					vnum=38
   					break;
-				case 433:
+				case 43:
   					vnum=4
   					break;
-				case 434:
+				case 44:
   					vnum=5
   					break;
-				case 435:
+				case 45:
   					vnum=39
   					break;
-				case 436:
+				case 46:
   					vnum=40
   					break;
-				case 437:
+				case 47:
   					vnum=6
   					break;
-				case 426:
+				case 36:
   					vnum=41
   					break;
-				case 427:
+				case 37:
   					vnum=7
   					break;
 			}
@@ -532,39 +532,39 @@
 			else{		
 			if(arrdata="technology"){
 			switch (leafid){
-				case 445:
+				case 55:
 					vnum=1;
-				case 446:
+				case 56:
   					vnum=36;
   					break;
-				case 453:
+				case 63:
   					vnum=2
   					break;
-				case 454:
+				case 64:
   					vnum=3
   					break;
-				case 448:
+				case 58:
   					vnum=37
   					break;
-				case 455:
+				case 65:
   					vnum=4
   					break;
-				case 456:
+				case 66:
   					vnum=38
   					break;
-				case 457:
+				case 67:
   					vnum=5
   					break;
-				case 458:
+				case 68:
   					vnum=6
   					break;
-				case 451:
+				case 61:
   					vnum=39
   					break;
-				case 459:
+				case 69:
   					vnum=40
   					break;
-				case 460:
+				case 70:
   					vnum=7
   					break;
 			}	
