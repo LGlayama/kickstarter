@@ -76,6 +76,7 @@
 		var oldnode = new Array();
 		var lenold=0;
 		var oldsrc=document.getElementById('iframe').src
+		var vnum=0
 	</script>
 
 	<script>
@@ -97,7 +98,6 @@
 		}		
 	 	
 	 	var arrdata=  document.getElementById("uniqueID").value;
-		console.log(arrdata)
 
 	 	if (arrdata == "design"){
 			oldsrc=document.getElementById('iframe').src
@@ -444,17 +444,133 @@
 
 
 		if(arrdata=="design"){
+			switch (leafid){
+				case 397:
+					vnum=1;
+				case 405:
+  					vnum=36;
+  					break;
+				case 406:
+  					vnum=2
+  					break;
+				case 399:
+  					vnum=3
+  					break;
+				case 407:
+  					vnum=37
+  					break;
+				case 408:
+  					vnum=4
+  					break;
+				case 409:
+  					vnum=38
+  					break;
+				case 410:
+  					vnum=5
+  					break;
+				case 411:
+  					vnum=6
+  					break;
+				case 412:
+  					vnum=39
+  					break;
+				case 403:
+  					vnum=40
+  					break;
+				case 404:
+  					vnum=7
+  					break;
+			}
 			document.getElementById('success').href="<?php echo base_url();?>application/video/design/vid_"+(leafid%70).toString()+".mp4"
 			document.getElementById('unsuccess').href="<?php echo base_url();?>application/video/design/vid_"+(leafid%71).toString()+".mp4"
 		}
 		else{
 			if(arrdata="fashion"){
+			switch (leafid){
+				case 420:
+					vnum=1;
+				case 428:
+  					vnum=36;
+  					break;
+				case 429:
+  					vnum=2
+  					break;
+				case 430:
+  					vnum=37
+  					break;
+				case 431:
+  					vnum=3
+  					break;
+				case 432:
+  					vnum=38
+  					break;
+				case 433:
+  					vnum=4
+  					break;
+				case 434:
+  					vnum=5
+  					break;
+				case 435:
+  					vnum=39
+  					break;
+				case 436:
+  					vnum=40
+  					break;
+				case 437:
+  					vnum=6
+  					break;
+				case 426:
+  					vnum=41
+  					break;
+				case 427:
+  					vnum=7
+  					break;
+			}
 			document.getElementById('success').href="<?php echo base_url();?>application/video/fashion/vid_"+(leafid%70).toString()+".mp4"
 			document.getElementById('unsuccess').href="<?php echo base_url();?>application/video/fashion/vid_"+(leafid%71).toString()+".mp4"				
 			}
-			else{
+			else{		
+			if(arrdata="technology"){
+			switch (leafid){
+				case 445:
+					vnum=1;
+				case 446:
+  					vnum=36;
+  					break;
+				case 453:
+  					vnum=2
+  					break;
+				case 454:
+  					vnum=3
+  					break;
+				case 448:
+  					vnum=37
+  					break;
+				case 455:
+  					vnum=4
+  					break;
+				case 456:
+  					vnum=38
+  					break;
+				case 457:
+  					vnum=5
+  					break;
+				case 458:
+  					vnum=6
+  					break;
+				case 451:
+  					vnum=39
+  					break;
+				case 459:
+  					vnum=40
+  					break;
+				case 460:
+  					vnum=7
+  					break;
+			}	
 			document.getElementById('success').href="<?php echo base_url();?>application/video/technology/vid_"+(leafid%70).toString()+".mp4"
-			document.getElementById('unsuccess').href="<?php echo base_url();?>application/video/technology/vid_"+(leafid%71).toString()+".mp4"				
+			document.getElementById('unsuccess').href="<?php echo base_url();?>application/video/technology/vid_"+(leafid%71).toString()+".mp4"	
+			}
 			}				
 			}
 		
@@ -784,7 +900,6 @@
 		
 		var gg = window.open("../../application/popup/getgood.html","success video","height=800, width=400, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no, status=no");
 		
-		console.log(gg)
 //
 //		var w1=gg.document
 //		var w2=gg.document

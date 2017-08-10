@@ -37,6 +37,10 @@
 	<script src="http://d3js.org/d3.v3.min.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script>
+		var highlightflag=0
+		var lastleaf=-1
+	</script>
+	<script>
 
 // The query
 		var query= {"statements":[{"statement":"MATCH path = (n{field :'design'})-[r]->(m) RETURN path",
@@ -143,7 +147,7 @@
 				  
 				update(root);
 
-				d3.select(self.frameElement).style("height", "500px");
+//				d3.select(self.frameElement).style("height", "500px");
 
 				function update(source) {
 
@@ -235,15 +239,16 @@
 					d.y0 = d.y;
 				  });
 
-				var lastleaf=-1
+				var tempvalue
 				window.addEventListener('message', function(event) { 
-					var tempvalue=event.data
-					console.log(tempvalue)
+					tempvalue=event.data
+					
 				    // IMPORTANT: Check the origin of the data! 
 				    if (event.origin=="http://localhost") { 
-				    	if (lastleaf!=-1)
+				    	if (lastleaf!=-1){
 				    		unhighlightpath(nodes,lastleaf)
-				    	
+						}
+						highlightflag=1;
  						highlightpath(nodes,parseInt(tempvalue))	
  						lastleaf=parseInt(tempvalue) 
 				    } else { 
@@ -252,7 +257,11 @@
 				        return; 
 				    } 
 				}); 
-				 	
+					
+				if(highlightflag==1){					
+					highlightpath(nodes,lastleaf);
+				}
+					
 				 circlesize();				  
 				 
 				  			  
