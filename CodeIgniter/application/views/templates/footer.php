@@ -6,7 +6,7 @@
               <a class="popup-player" id="success" href="<?php echo base_url();?>application/video/vid_1_design.mp4">
                <img src="<?php echo base_url();?>application/video/success.jpg"  height="150" width="200">
               </a>
-<!--               <video class="thumbnail" src="<?php echo base_url();?>application/video/vid_1_design.mp4" width="200" height="200" poster="<?php echo base_url();?>application/video/1.png" onclick="this.paused?this.play():this.pause();"/> -->
+
               <h4>Successful example video</h4>
  				<form method="post"   >
 		  			<label>comment</label>
@@ -18,7 +18,7 @@
               <a class="popup-player" id="unsuccess" href="<?php echo base_url();?>application/video/vid_1_design.mp4">
                <img src="<?php echo base_url();?>application/video/unsuccess.jpg"  height="150" width="200">
               </a>
-<!--              <video class="thumbnail" src="<?php echo base_url();?>application/video/vid_1_fashion.mp4" width="200" height="200" poster="<?php echo base_url();?>application/video/2.png" onclick="this.paused?this.play():this.pause();"/> -->
+
               <h4>Unsuccessful example video</h4>
 				<form method="post"   >
 		  			<label>comment</label>

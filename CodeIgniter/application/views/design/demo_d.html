@@ -237,15 +237,15 @@
 
 				var lastleaf=-1
 				window.addEventListener('message', function(event) { 
-					var tempvalue=event.data.split("+")
-					console.log(tempvalue)					
+					var tempvalue=event.data
+					console.log(tempvalue)
 				    // IMPORTANT: Check the origin of the data! 
 				    if (event.origin=="http://localhost") { 
 				    	if (lastleaf!=-1)
 				    		unhighlightpath(nodes,lastleaf)
 				    	
- 						highlightpath(nodes,parseInt(tempvalue[0]))	
- 						lastleaf=parseInt(tempvalue[0]) 
+ 						highlightpath(nodes,parseInt(tempvalue))	
+ 						lastleaf=parseInt(tempvalue) 
 				    } else { 
 				        // The data hasn't been sent from your site! 
 				        // Be careful! Do not use it. 
@@ -261,7 +261,7 @@
 				function circlesize(){
 					 d3.selectAll("g.node").filter(function (x) {
 					 		
-					 		return (x.title.indexOf("success")!=-1 && 10<parseInt(x.title.replace( /^\D+/g, ''))&&parseInt(x.title.replace( /^\D+/g, ''))<100 )
+					 		return (x.title.indexOf("success")!=-1 && 10<parseFloat(x.title.replace( /^\D+/g, ''))&&parseFloat(x.title.replace( /^\D+/g, ''))<=20 )
 					 		                          	
                             })
                             .select("circle")
@@ -269,7 +269,7 @@
 
 					 d3.selectAll("g.node").filter(function (x) {
 					 		
-					 		return (x.title.indexOf("success")!=-1 && 100<parseInt(x.title.replace( /^\D+/g, '')))
+					 		return (x.title.indexOf("success")!=-1 && 20<parseFloat(x.title.replace( /^\D+/g, '')))
 					 		                          	
                             })
                             .select("circle")

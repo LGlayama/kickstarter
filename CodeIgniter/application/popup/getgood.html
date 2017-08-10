@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>success video</title>
+
+	<link href="..//css/bootstrap.min.css" rel="stylesheet">
+	
+	<style>  
+		.col-center-block {  
+    		float: none;  
+    		display: block;  
+    		margin-left: auto;  
+    		margin-right: auto;  
+		}  
+	</style>  
+	
+	<script type="text/javascript">
+		function getclick(number){
+			if(number==1){
+				document.getElementById("designsv").height='151';
+				window.opener.closewin(1);
+			}
+			console.log(window.opener)
+			if(number==2){
+				document.getElementById("fashionsv").height='151';
+				window.opener.closewin(2);
+			}
+			if(number==3){
+				document.getElementById("technologysv").height='151';
+				window.opener.closewin(3);
+			}
+			
+			return true;
+			
+		}
+	</script>
+  </head>
+
+  <body>
+  	
+<!--
+  		<div class="col-md-2 col-sm-2 col-lg-offset-2 col-center-block">
+               <img id="designsv" src="1.png"  height="150" width="200" onclick="getclick(1)" >          
+        </div>
+        
+   		<div class="col-md-2 col-sm-2 col-center-block">             
+               <img id="fashionsv" src="2.png"  height="150" width="200" onclick="getclick(2)" >
+        </div>
+
+  		<div class="col-md-2 col-sm-2 col-center-block">
+               <img id="technologysv" src="3.png"  height="150" width="200" onclick="getclick(3)"  >
+        </div>
+-->
+        
+   		<div class="col-md-2 col-sm-2 col-lg-offset-2 col-center-block">
+           <a class="popup-player" id="1pp" href="../video/vid_1_design.mp4"   >
+               <img id="designsv" src="1.png"  height="150" width="200" onclick="getclick(1)" > 
+           </a>         
+        </div>
+        
+   		<div class="col-md-2 col-sm-2 col-center-block">             
+           <a class="popup-player" id="2pp" href="../video/vid_1_fashion.mp4" >
+               <img id="fashionsv" src="2.png"  height="150" width="200" onclick="getclick(2)" >
+           </a> 
+        </div>
+
+  		<div class="col-md-2 col-sm-2 col-center-block">
+            <a class="popup-player" id="3pp" href="../video/vid_5_technology.mp4"  >
+               <img id="technologysv" src="3.png"  height="150" width="200" onclick="getclick(3)"  >
+           </a> 
+        </div>       
+
+<!-- load the d3.js library -->	
+
+  </body>
+</html>
