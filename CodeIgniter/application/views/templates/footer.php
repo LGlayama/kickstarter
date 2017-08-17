@@ -3,27 +3,21 @@
           <div class="row placeholders">
    
            	<div class="col-xs-12 col-sm-6 placeholder demo1">
+<!--
               <a class="popup-player" id="success" href="<?php echo base_url();?>application/video/vid_1_design.mp4">
                <img src="<?php echo base_url();?>application/video/success.jpg"  height="150" width="200">
               </a>
-
-              <h4>Successful example video</h4>
- 				<form method="post"   >
-		  			<label>comment</label>
-		  			<input type="text"   value="" style="width: 250px">  
-				</form>
+-->
+               <img src="<?php echo base_url();?>application/video/success.jpg" onclick="Showvideo()" height="150" width="200">
             </div>
             
             <div class="col-xs-12 col-sm-6 placeholder demo2">
+<!--
               <a class="popup-player" id="unsuccess" href="<?php echo base_url();?>application/video/vid_1_design.mp4">
                <img src="<?php echo base_url();?>application/video/unsuccess.jpg"  height="150" width="200">
               </a>
-
-              <h4>Unsuccessful example video</h4>
-				<form method="post"   >
-		  			<label>comment</label>
-		  			<input type="text"   value="" style="width: 250px">  
-				</form>
+-->
+             <img src="<?php echo base_url();?>application/video/unsuccess.jpg" onclick="Showvideo()" height="150" width="200">
             </div>
             	
             	

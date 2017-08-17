@@ -57,26 +57,15 @@
                 }
         });
     </script>
-
-    <script type="text/javascript"> 
-          function feature_video(){
-              var con=Math.ceil(Math.random()*10); 
-              if (con%3==0)
-                $(".demo1").insertAfter(".demo3");
-              if (con%3==1)
-                $(".demo1").insertAfter(".demo2");  
-              if (con%3==2)
-                $(".demo2").insertAfter(".demo3");  
-          }  
-    </script>
 	
 	<script src="http://d3js.org/d3.v3.min.js"></script>
 	
 	<script>
 		var oldnode = new Array();
 		var lenold=0;
-		var oldsrc=document.getElementById('iframe').src
-		var vnum=0
+		var oldsrc=document.getElementById('iframe').src;
+		var vnum=0;
+		var leafid=-1;
 	</script>
 
 	<script>
@@ -137,7 +126,7 @@
 			}
 		}
 	 
-	 
+	 	resetbar();
 	 
 		return false;
 	}
@@ -146,6 +135,7 @@
 
 
 		var arrdata=  document.getElementById("uniqueID").value;
+		console.log(arrdata)
 
 		var score=new Array();
 
@@ -167,7 +157,7 @@
     		x[i].style.color = "steelblue";
 		}	
 
-	 	var leafid;
+
 		var trdata=new Array();
 		
 	 	if (arrdata == "design"){
@@ -447,6 +437,7 @@
 			switch (leafid){
 				case 7:
 					vnum=1;
+					break;
 				case 15:
   					vnum=36;
   					break;
@@ -481,14 +472,16 @@
   					vnum=7
   					break;
 			}
-			document.getElementById('success').href="<?php echo base_url();?>application/video/design/vid_"+(leafid%70).toString()+".mp4"
-			document.getElementById('unsuccess').href="<?php echo base_url();?>application/video/design/vid_"+(leafid%71).toString()+".mp4"
+//			document.getElementById('success').href="<?php echo base_url();?>application/video/design/vid_"+vnum.toString()+".mp4"
+//			document.getElementById('unsuccess').href="<?php echo base_url();?>application/video/design/vid_"+vnum.toString()+".mp4"
+//			console.log(vnum)
 		}
 		else{
 			if(arrdata="fashion"){
 			switch (leafid){
 				case 30:
 					vnum=1;
+					break;
 				case 38:
   					vnum=36;
   					break;
@@ -526,14 +519,15 @@
   					vnum=7
   					break;
 			}
-			document.getElementById('success').href="<?php echo base_url();?>application/video/fashion/vid_"+(leafid%70).toString()+".mp4"
-			document.getElementById('unsuccess').href="<?php echo base_url();?>application/video/fashion/vid_"+(leafid%71).toString()+".mp4"				
+//			document.getElementById('success').href="<?php echo base_url();?>application/video/fashion/vid_"+vnum.toString()+".mp4"
+//			document.getElementById('unsuccess').href="<?php echo base_url();?>application/video/fashion/vid_"+vnum.toString()+".mp4"				
 			}
 			else{		
 			if(arrdata="technology"){
 			switch (leafid){
 				case 55:
 					vnum=1;
+					break;
 				case 56:
   					vnum=36;
   					break;
@@ -568,13 +562,57 @@
   					vnum=7
   					break;
 			}	
-			document.getElementById('success').href="<?php echo base_url();?>application/video/technology/vid_"+(leafid%70).toString()+".mp4"
-			document.getElementById('unsuccess').href="<?php echo base_url();?>application/video/technology/vid_"+(leafid%71).toString()+".mp4"	
+//			document.getElementById('success').href="<?php echo base_url();?>application/video/technology/vid_"+vnum.toString()+".mp4"
+//			document.getElementById('unsuccess').href="<?php echo base_url();?>application/video/technology/vid_"+vnum.toString()+".mp4"	
 			}
 			}				
 			}
 		
 
+	}
+		
+	function resetbar(){
+			if(document.getElementById("R1")!=null){
+				document.getElementById("R1").value = "0";
+				document.getElementById("PositiveMindset").innerHTML="0";
+			}
+			if(document.getElementById("R2")!=null){
+				document.getElementById("R2").value = "0";
+				document.getElementById("Duraion").innerHTML="0";
+			}
+			if(document.getElementById("R3")!=null){
+				document.getElementById("R3").value = "0";
+				document.getElementById("Involvement").innerHTML="0";
+			}
+			if(document.getElementById("R4")!=null){
+				document.getElementById("R4").value = "0";
+				document.getElementById("PurchaseIntent").innerHTML="0";
+			}
+			if(document.getElementById("R5")!=null){
+				document.getElementById("R5").value = "0";
+				document.getElementById("Creativity").innerHTML="0";
+			}
+			if(document.getElementById("R6")!=null){
+				document.getElementById("R6").value = "0";
+				document.getElementById("Relevance").innerHTML="0";
+			}
+			if(document.getElementById("R7")!=null){
+				document.getElementById("R7").value = "0";
+				document.getElementById("AVQuality").innerHTML="0";
+			}
+			if(document.getElementById("R8")!=null){
+				document.getElementById("R8").value = "0";
+				document.getElementById("Attitude").innerHTML="0";
+			}
+			if(document.getElementById("R9")!=null){
+				document.getElementById("R9").value = "0";
+				document.getElementById("Complexity").innerHTML="0";
+			}
+			var x = document.getElementsByClassName("hvalue");
+			var i;
+			for (i = 0; i < x.length; i++) {
+    			x[i].style.color = "steelblue";
+			}	
 	}
 		
 	function report(period){
@@ -1077,6 +1115,17 @@
 		temp=oldsrc
 		oldsrc=document.getElementById('iframe').src
 		document.getElementById('iframe').src=temp;
+		resetbar();
+	}
+	
+	function Showvideo(){
+		oldsrc=document.getElementById('iframe').src
+	 	document.getElementById('iframe').src="../../application/views/player/player.html";
+
+		var frame = document.getElementById('iframe');
+		frame.contentWindow.postMessage(vnum, '*'); 
+		console.log(vnum)
+		
 	}
 
 	</script>
@@ -1143,7 +1192,7 @@
 		<div class="panel-body " >
           <ul class="nav nav-sidebar list-group">
             <div id="li2" style="margin: 10px;">              
-            <li><a href="#" id="hDuraion" class="hvalue" onclick="feature_video()" >Duraion</a></li>
+            <li><a href="#" id="hDuraion" class="hvalue" >Duraion</a></li>
                 <input id= "R2" type="range" min="0" max="7" value="0" step="0.5" onchange="showValue2(this.value)" style="width: 200px" />
                 <span id="Duraion">0</span>
                 <script type="text/javascript">
@@ -1154,7 +1203,7 @@
                 </script> 
             </div>
             <div id="li3" style="margin: 10px;"> 
-            <li><a href="#" id="hInvolvement" class="hvalue" onclick="feature_video()" >Involvement</a></li>
+            <li><a href="#" id="hInvolvement" class="hvalue" >Involvement</a></li>
                 <input id="R3" type="range" min="0" max="7" value="0" step="0.5" onchange="showValue3(this.value)" style="width: 200px" />
                 <span id="Involvement">0</span>
                 <script type="text/javascript">
@@ -1165,7 +1214,7 @@
                 </script>
             </div>
             <div id="li4" style="margin: 10px;">
-            <li><a href="#" id="hPurchaseIntent" class="hvalue" onclick="feature_video()" >PurchaseIntent </a></li>
+            <li><a href="#" id="hPurchaseIntent" class="hvalue" >PurchaseIntent </a></li>
                 <input id="R4" type="range" min="0" max="7" value="0" step="0.5" onchange="showValue4(this.value)" style="width: 200px" />
                 <span id="PurchaseIntent">0</span>
                 <script type="text/javascript">
@@ -1176,7 +1225,7 @@
                 </script>
             </div>
             <div id="li5" style="margin: 10px;">
-            <li><a href="#" id="hCreativity" class="hvalue" onclick="feature_video()" >Creativity</a></li>
+            <li><a href="#" id="hCreativity" class="hvalue" >Creativity</a></li>
                 <input id="R5" type="range" min="0" max="7" value="0" step="0.5" onchange="showValue5(this.value)" style="width: 200px" />
                 <span id="Creativity">0</span>
                 <script type="text/javascript">
@@ -1187,7 +1236,7 @@
                 </script>
             </div>
             <div id="li6" style="margin: 10px;">
-            <li><a href="#" id="hRelevance" class="hvalue" onclick="feature_video()" >Relevance</a></li>
+            <li><a href="#" id="hRelevance" class="hvalue" >Relevance</a></li>
                 <input id="R6" type="range" min="0" max="7" value="0" step="0.5" onchange="showValue7(this.value)" style="width: 200px" />
                 <span id="Relevance">0</span>
                 <script type="text/javascript">
@@ -1198,7 +1247,7 @@
                 </script>
             </div>
             <div id="li7" style="margin: 10px;">
-            <li><a href="#" id="hAVQuality" class="hvalue" onclick="feature_video()" >AVQuality</a></li>
+            <li><a href="#" id="hAVQuality" class="hvalue" >AVQuality</a></li>
                 <input id="R7" type="range" min="0" max="7" value="0" step="0.5" onchange="showValue8(this.value)" style="width: 200px" />
                 <span id="AVQuality">0</span>
                 <script type="text/javascript">
@@ -1209,7 +1258,7 @@
                 </script>
             </div>
             <div id="li8" style="margin: 10px;"> 
-            <li><a href="#" id="hAttitude" class="hvalue" onclick="feature_video()" >Attitude</a></li>
+            <li><a href="#" id="hAttitude" class="hvalue" >Attitude</a></li>
                 <input id="R8" type="range" min="0" max="7" value="0" step="0.5" onchange="showValue9(this.value)" style="width: 200px" />
                 <span id="Attitude">0</span>
                 <script type="text/javascript">
@@ -1220,7 +1269,7 @@
                 </script>
             </div>
             <div id="li9" style="margin: 10px;">
-            <li><a href="#" id="hComplexity" class="hvalue" onclick="feature_video()" >Complexity</a></li>
+            <li><a href="#" id="hComplexity" class="hvalue" >Complexity</a></li>
                 <input id="R9" type="range" min="0" max="7" value="0" step="0.5" onchange="showValue10(this.value)" style="width: 200px" />
                 <span id="Complexity">0</span>
                 <script type="text/javascript">

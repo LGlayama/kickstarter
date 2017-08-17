@@ -1,0 +1,25 @@
+  <!DOCTYPE html>
+  <html>
+  <body>
+
+  <video width="640" height="480" controls id="player" style="clear:both;display:block;margin:auto">
+    <source src="../../video/vid_1_fashion.mp4"  type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  </body>
+
+
+  
+  <script type="text/javascript">
+	  window.addEventListener('message', function(event) { 
+			var tempvalue=event.data
+			console.log(tempvalue)			
+				// IMPORTANT: Check the origin of the data! 
+			if (event.origin=="http://localhost") { 
+					document.getElementById('player').src="../../video/design/vid_"+tempvalue.toString()+".mp4"					
+				} else { 
+				   return; 
+				} 
+			});             
+  </script>
+  </html>
