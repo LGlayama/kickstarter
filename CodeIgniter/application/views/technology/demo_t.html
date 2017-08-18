@@ -290,40 +290,73 @@
 				// Toggle children on click.
 
 				function highlightpath(a,id) {
+					if(id>0){
+                    	for (var i = 0; i < a.length; i++) {
+                        	if (a[i].id == id)
+                            	var d = a[i];
+                    	}
 
-                    for (var i = 0; i < a.length; i++) {
-                        if (a[i].id == id)
-                            var d = a[i];
-                    }
-
-                    parentLine = function (d) {
+                    	parentLine = function (d) {
                         
-                        d3.selectAll("g.node").filter(function (x) {
+                        	d3.selectAll("g.node").filter(function (x) {
                             return x.id == d.id
                         })
-                            .select("text")
-                            .style("fill", "darkOrange")
-                            .style("font", "15px sans-serif");
-                        if (d.parent) {
-                            parentLine(d.parent);
-                            d3.selectAll("g.node").filter(function (x) {
-                                return x.id == d.parent.id
-                            })
-                                .select("text")
-                                .style("fill", "darkOrange")
-                                .style("font", "15px sans-serif");
-				       		d3.selectAll("path.link").filter(function(s){  return s.target.id==d.id})	     
+                            	.select("text")
+                            	.style("fill", "darkOrange")
+                            	.style("font", "15px sans-serif");
+                        	if (d.parent) {
+                            	parentLine(d.parent);
+                            	d3.selectAll("g.node").filter(function (x) {
+                                	return x.id == d.parent.id
+                            	})
+                                	.select("text")
+                                	.style("fill", "darkOrange")
+                                	.style("font", "15px sans-serif");
+				       			d3.selectAll("path.link").filter(function(s){  return s.target.id==d.id})	     
 				      				   
-	      						.style("stroke", "darkOrange");                                
-                        }
+	      							.style("stroke", "darkOrange");                                
+                        	}
 
 
-                    }
-                    parentLine(d);
+                    	}
+                    	parentLine(d);
+					}
+					else{
+						id=-id
+                    	for (var i = 0; i < a.length; i++) {
+                        	if (a[i].id == id)
+                            	var d = a[i];
+                    	}
+
+                    	parentLine = function (d) {
+                        
+                        	d3.selectAll("g.node").filter(function (x) {
+                            return x.id == d.id
+                        })
+                            	.select("text")
+                            	.style("fill", "#33FF66")
+                            	.style("font", "15px sans-serif");
+                        	if (d.parent) {
+                            	parentLine(d.parent);
+                            	d3.selectAll("g.node").filter(function (x) {
+                                	return x.id == d.parent.id
+                            	})
+                                	.select("text")
+                                	.style("fill", "#33FF66")
+                                	.style("font", "15px sans-serif");
+				       			d3.selectAll("path.link").filter(function(s){  return s.target.id==d.id})	     
+				      				   
+	      							.style("stroke", "#33FF66");                                
+                        	}
+
+                    	}
+                    	parentLine(d);						
+						
+					}
                 }
 
 				function unhighlightpath(a,id) {
-
+					if(id<0){id=-id}
                     for (var i = 0; i < a.length; i++) {
                         if (a[i].id == id)
                             var d = a[i];

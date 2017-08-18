@@ -676,6 +676,7 @@
 				document.getElementById("Complexity").innerHTML="5.5";
 				rscore[8]=5.5;
 			}
+			
 		}
 		if (period=="demo2"){
 			if(document.getElementById("R1")!=null){
@@ -1127,6 +1128,425 @@
 		console.log(vnum)
 		
 	}
+		
+	function countpart(){
+
+
+		var arrdata=  document.getElementById("uniqueID").value;
+
+		var score=new Array();
+
+		
+
+	 	score[0]=  document.getElementById("PositiveMindset")==null? -1:document.getElementById("PositiveMindset").innerHTML  ;
+	 	score[1]=  document.getElementById("Duraion")==null? -1:document.getElementById("Duraion").innerHTML;
+	 	score[2]=  document.getElementById("Involvement")==null? -1:document.getElementById("Involvement").innerHTML;
+	 	score[3]=  document.getElementById("PurchaseIntent")==null? -1:document.getElementById("PurchaseIntent").innerHTML;
+	 	score[4]=  document.getElementById("Creativity")==null? -1:document.getElementById("Creativity").innerHTML;	
+	 	score[5]=  document.getElementById("Relevance")==null? -1:document.getElementById("Relevance").innerHTML;
+	 	score[6]=  document.getElementById("AVQuality")==null? -1:document.getElementById("AVQuality").innerHTML;
+	 	score[7]=  document.getElementById("Attitude")==null? -1:document.getElementById("Attitude").innerHTML;
+	 	score[8]=  document.getElementById("Complexity")==null? -1:document.getElementById("Complexity").innerHTML;
+
+		var x = document.getElementsByClassName("hvalue");
+		var i;
+		for (i = 0; i < x.length; i++) {
+    		x[i].style.color = "steelblue";
+		}	
+
+
+		var trdata=new Array();
+		
+	 	if (arrdata == "design"){
+		 	if(score[6]<=3.125){
+				document.getElementById("hAVQuality").style.color='orange'
+				if(score[1]<=2.25){
+					document.getElementById("hDuraion").style.color='orange'
+					if(score[1]<=1.25){
+						document.getElementById("hDuraion").style.color='orange'
+						leafid=15;
+					}
+					else{
+						document.getElementById("hDuraion").style.color='orange'
+						if(score[6]<=1.755){
+							document.getElementById("hAVQuality").style.color='orange'
+							leafid=16;	
+						}
+						else{
+							document.getElementById("hAVQuality").style.color='orange'
+							leafid=15;
+						}
+					}
+				}
+				else{
+					document.getElementById("hDuraion").style.color='orange'
+					if(score[2]<=1.6875){
+						document.getElementById("hInvolvement").style.color='orange'
+						leafid=17;
+					}
+					else{
+						document.getElementById("hInvolvement").style.color='orange'
+						if(score[8]<=1.5){
+							document.getElementById("hComplexity").style.color='orange'
+							leafid=9;
+						}
+						else{
+							document.getElementById("hComplexity").style.color='orange'
+							leafid=17;
+						}
+					}
+					
+				}
+			}
+			else{
+				document.getElementById("hAVQuality").style.color='orange'
+				if(score[1]<=3.25){
+					document.getElementById("hDuraion").style.color='orange'
+					if(score[6]<=5.625){
+						document.getElementById("hAVQuality").style.color='orange'
+						if(score[7]<=3.875){
+							document.getElementById("hAttitude").style.color='orange'
+							leafid=20;
+						}
+						else{
+							document.getElementById("hAttitude").style.color='orange'
+							leafid=19;
+						}
+					}
+					else{
+						document.getElementById("hAVQuality").style.color='orange'
+						if(score[7]<=3.625){
+							document.getElementById("hAttitude").style.color='orange'
+							leafid=22;
+						}
+						else{
+							document.getElementById("hAttitude").style.color='orange'
+							leafid=21;
+						}					
+					}
+				}
+				else{
+					document.getElementById("hDuraion").style.color='orange'
+					if(score[4]<=3.75){
+						document.getElementById("hCreativity").style.color='orange'
+						leafid=14;
+					}
+					else{
+						document.getElementById("hCreativity").style.color='orange'
+						leafid=13;
+					}
+				}
+			}
+		}
+		else if(arrdata == "fashion"){
+			if(score[6]<=2.875){
+				document.getElementById("hAVQuality").style.color='orange'
+				if(score[5]<=1.75){
+					document.getElementById("hRelevance").style.color='orange'
+					if(score[3]<=1.5){
+						document.getElementById("hPurchaseIntent").style.color='orange'
+						leafid=38;
+					}
+					else{
+						document.getElementById("hPurchaseIntent").style.color='orange'
+						if(score[2]<=1.5625){
+							document.getElementById("hInvolvement").style.color='orange'
+							leafid=39;	
+						}
+						else{
+							document.getElementById("hInvolvement").style.color='orange'
+							leafid=38;
+						}
+					}
+				}
+				else{
+					document.getElementById("hRelevance").style.color='orange'
+					if(score[7]<=3.125){
+						document.getElementById("hAttitude").style.color='orange'
+						if(score[4]<=3.75){
+							document.getElementById("hCreativity").style.color='orange'
+							leafid=41;
+						}
+						else{
+							document.getElementById("hCreativity").style.color='orange'
+							leafid=40;
+						}
+					}
+					else{
+						document.getElementById("hAttitude").style.color='orange'
+						if(score[2]<=2.0625){
+							document.getElementById("hInvolvement").style.color='orange'
+							leafid=43;
+						}
+						else{
+							document.getElementById("hInvolvement").style.color='orange'
+							leafid=42;
+						}					
+					}
+				}
+			}
+			else{
+				document.getElementById("hAVQuality").style.color='orange'
+				if(score[5]<=5.75){
+					document.getElementById("hRelevance").style.color='orange'
+						if(score[1]<=3.75){
+							document.getElementById("hDuraion").style.color='orange'						
+							if(score[2]<=4.0625){
+								document.getElementById("hInvolvement").style.color='orange'							
+								leafid=45;
+							}
+							else{
+								document.getElementById("hInvolvement").style.color='orange'
+								leafid=44;
+							}
+						}
+						else{
+							document.getElementById("hDuraion").style.color='orange'						
+							if(score[3]<=5.5){
+								document.getElementById("hPurchaseIntent").style.color='orange'
+								leafid=47;
+							}
+							else{
+								document.getElementById("hPurchaseIntent").style.color='orange'
+								leafid=46;
+							}						
+						}
+					}
+				else{
+					document.getElementById("hRelevance").style.color='orange'				
+						if(score[6]<=5.625){
+							document.getElementById("hAVQuality").style.color='orange'
+							leafid=37;
+						}
+						else{
+							document.getElementById("hAVQuality").style.color='orange'
+							leafid=36;
+						}					
+					}
+			}
+		}
+		else{
+			if(score[6]<=3.875){
+				document.getElementById("hAVQuality").style.color='orange'
+				if(score[4]<=1.75){
+					document.getElementById("hCreativity").style.color='orange'
+					if(score[7]<=6.375){
+						document.getElementById("hAttitude").style.color='orange'
+						leafid=56;
+					}
+					else{
+						document.getElementById("hAttitude").style.color='orange'
+						leafid=55;
+					}
+				}
+				else{
+					document.getElementById("hCreativity").style.color='orange'
+					if(score[4]<=4.25){
+						document.getElementById("hCreativity").style.color='orange'
+						if(score[7]<=5.125){
+							document.getElementById("hAttitude").style.color='orange'
+							leafid=64;
+						}
+						else{
+							document.getElementById("hAttitude").style.color='orange'
+							leafid=63;
+						}
+					}
+					else{
+						document.getElementById("hCreativity").style.color='orange'
+						leafid=64;
+					}
+				}
+			}
+			
+		
+			else{
+				document.getElementById("hAVQuality").style.color='orange'
+				if(score[6]<=6.875){
+					document.getElementById("hAVQuality").style.color='orange'
+					if(score[5]<=3.75){
+						document.getElementById("hRelevance").style.color='orange'
+						if(score[5]<=1.75){
+							document.getElementById("hRelevance").style.color='orange'
+							leafid=66;
+						}
+						else{
+							document.getElementById("hRelevance").style.color='orange'
+							leafid=65;
+						}
+					}
+					else{
+						document.getElementById("hRelevance").style.color='orange'
+						if(score[1]<=1.75){
+							document.getElementById("hDuraion").style.color='orange'
+							leafid=68;
+						}
+						else{
+							document.getElementById("hDuraion").style.color='orange'
+							leafid=67;
+						}										
+					}
+				}
+				else{
+					document.getElementById("hAVQuality").style.color='orange'
+					if(score[8]<=3.5){
+						document.getElementById("hComplexity").style.color='orange'
+						leafid=69;
+					}
+					else{
+						document.getElementById("hComplexity").style.color='orange'
+						if(score[3]<=6.5){
+							document.getElementById("hPurchaseIntent").style.color='orange'
+							leafid=70;
+						}
+						else{
+							document.getElementById("hPurchaseIntent").style.color='orange'
+							leafid=69;
+						}					
+					}
+				}
+			}
+		}
+
+
+		
+		var frame = document.getElementById('iframe');
+
+		
+		
+		frame.contentWindow.postMessage(-leafid, '*'); 
+
+
+		if(arrdata=="design"){
+			switch (leafid){
+				case 7:
+					vnum=1;
+					break;
+				case 15:
+  					vnum=36;
+  					break;
+				case 16:
+  					vnum=2
+  					break;
+				case 9:
+  					vnum=3
+  					break;
+				case 17:
+  					vnum=37
+  					break;
+				case 18:
+  					vnum=4
+  					break;
+				case 19:
+  					vnum=38
+  					break;
+				case 20:
+  					vnum=5
+  					break;
+				case 21:
+  					vnum=6
+  					break;
+				case 22:
+  					vnum=39
+  					break;
+				case 13:
+  					vnum=40
+  					break;
+				case 14:
+  					vnum=7
+  					break;
+			}
+		}
+		else{
+			if(arrdata="fashion"){
+			switch (leafid){
+				case 30:
+					vnum=1;
+					break;
+				case 38:
+  					vnum=36;
+  					break;
+				case 39:
+  					vnum=2
+  					break;
+				case 40:
+  					vnum=37
+  					break;
+				case 41:
+  					vnum=3
+  					break;
+				case 42:
+  					vnum=38
+  					break;
+				case 43:
+  					vnum=4
+  					break;
+				case 44:
+  					vnum=5
+  					break;
+				case 45:
+  					vnum=39
+  					break;
+				case 46:
+  					vnum=40
+  					break;
+				case 47:
+  					vnum=6
+  					break;
+				case 36:
+  					vnum=41
+  					break;
+				case 37:
+  					vnum=7
+  					break;
+			}			
+			}
+			else{		
+			if(arrdata="technology"){
+			switch (leafid){
+				case 55:
+					vnum=1;
+					break;
+				case 56:
+  					vnum=36;
+  					break;
+				case 63:
+  					vnum=2
+  					break;
+				case 64:
+  					vnum=3
+  					break;
+				case 58:
+  					vnum=37
+  					break;
+				case 65:
+  					vnum=4
+  					break;
+				case 66:
+  					vnum=38
+  					break;
+				case 67:
+  					vnum=5
+  					break;
+				case 68:
+  					vnum=6
+  					break;
+				case 61:
+  					vnum=39
+  					break;
+				case 69:
+  					vnum=40
+  					break;
+				case 70:
+  					vnum=7
+  					break;
+			}	
+			}
+			}				
+			}
+		
+
+	}
 
 	</script>
   	
@@ -1180,7 +1600,7 @@
 		  		<label>field</label>
 		  		<input type="text" name="field" id="uniqueID" value="" style="width: 200px"> 
 		  		<input type="button" value="highlight" onclick="highlight();" style="margin: auto 0px auto 35px">
-				<input type="button" value="inputOct" onclick="Inputscore();" style="margin: auto 0px auto 30px; " > 
+		  		<input type="button" value="countpart" onclick="countpart();" style="margin: auto 0px auto 30px; " >  
 			</form>      
         </div>
         </div>
@@ -1300,7 +1720,7 @@
 			</select>
 			</form>
       		<input type="button" value="getgood" onclick="getgood();" style="margin: 10px auto auto auto">
-       		          
+			<input type="button" value="inputOct" onclick="Inputscore();" style="margin: auto 0px auto 30px; " >       		       
         </div>
         </div>
         </div>
