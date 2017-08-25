@@ -39,6 +39,52 @@
 	<script>
 		var highlightflag=0
 		var lastleaf=-1
+		
+		function fcountpart(id){
+			var cid
+			switch (id){
+				case 30:
+					cid=38;
+					break;
+				case 38:
+  					cid=39;
+  					break;
+				case 39:
+  					cid=38;
+  					break;
+				case 40:
+  					cid=41
+  					break;
+				case 41:
+  					cid=40
+  					break;
+				case 42:
+					cid=43
+  					break;
+				case 43:
+  					cid=42
+  					break;
+				case 44:
+  					cid=45
+  					break;
+				case 45:
+  					cid=44
+  					break;
+				case 46:
+  					cid=47
+  					break;
+				case 47:
+  					cid=46
+  					break;
+				case 36:
+  					cid=37
+  					break;
+				case 37:
+  					cid=36
+  					break;
+			}				
+			return cid
+		}
 	</script>
 	<script>
 
@@ -247,9 +293,19 @@
 				    	if (lastleaf!=-1){
 				    		unhighlightpath(nodes,lastleaf)
 						}
-						highlightflag=1;
- 						highlightpath(nodes,parseInt(tempvalue))	
- 						lastleaf=parseInt(tempvalue) 
+						if(parseInt(tempvalue)>0){
+							highlightflag=1;
+ 							highlightpath(nodes,parseInt(tempvalue))	
+ 							lastleaf=parseInt(tempvalue) 
+						}
+						else{
+							
+							highlightflag=-1;
+ 							
+							highlightpath(nodes,-fcountpart(-parseInt(tempvalue)))
+							highlightpath(nodes,-parseInt(tempvalue))
+ 							lastleaf=parseInt(tempvalue) 
+						} 
 				    } else { 
 				        // The data hasn't been sent from your site! 
 				        // Be careful! Do not use it. 
@@ -259,6 +315,11 @@
 					
 				if(highlightflag==1){					
 					highlightpath(nodes,lastleaf);
+				}
+				if(highlightflag==-1){					
+					
+					highlightpath(nodes,-dcountpart(-lastleaf))
+					highlightpath(nodes,-lastleaf);
 				}
 					
 				 circlesize();					 	
@@ -355,14 +416,13 @@
                 }
 
 				function unhighlightpath(a,id) {
-					if(id<0){id=-id}
-                    for (var i = 0; i < a.length; i++) {
-                        if (a[i].id == id)
-                            var d = a[i];
-                    }
-
-                    parentLine = function (d) {
-                        
+					if(id>0){
+                    	for (var i = 0; i < a.length; i++) {
+                        	if (a[i].id == id)
+                            	var d = a[i];
+                    	}
+                    	parentLine = function (d) {
+                       
                         d3.selectAll("g.node").filter(function (x) {
                             return x.id == d.id
                         })
@@ -379,12 +439,20 @@
                                 .style("font", "12px sans-serif");
 				       		d3.selectAll("path.link").filter(function(s){  return s.target.id==d.id})	     
 				      				   
-	      						.style("stroke", "#ccc");                                   
+	      						.style("stroke", "#ccc");                                
                         }
 
 
                     }
-                    parentLine(d);
+                    	parentLine(d);
+					}
+					else{
+						id=-id
+						var tempid = fcountpart(id);
+						unhighlightpath(nodes,id);
+						unhighlightpath(nodes,tempid)
+						
+					}
                 }                
 
 

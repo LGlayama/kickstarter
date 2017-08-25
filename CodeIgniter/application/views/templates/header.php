@@ -1130,14 +1130,12 @@
 	}
 		
 	function countpart(){
-
-
+		
 		var arrdata=  document.getElementById("uniqueID").value;
 
 		var score=new Array();
 
-		
-
+	
 	 	score[0]=  document.getElementById("PositiveMindset")==null? -1:document.getElementById("PositiveMindset").innerHTML  ;
 	 	score[1]=  document.getElementById("Duraion")==null? -1:document.getElementById("Duraion").innerHTML;
 	 	score[2]=  document.getElementById("Involvement")==null? -1:document.getElementById("Involvement").innerHTML;
@@ -1164,17 +1162,17 @@
 					document.getElementById("hDuraion").style.color='orange'
 					if(score[1]<=1.25){
 						document.getElementById("hDuraion").style.color='orange'
-						leafid=15;
+						leafid=7;
 					}
 					else{
 						document.getElementById("hDuraion").style.color='orange'
 						if(score[6]<=1.755){
 							document.getElementById("hAVQuality").style.color='orange'
-							leafid=16;	
+							leafid=15;	
 						}
 						else{
 							document.getElementById("hAVQuality").style.color='orange'
-							leafid=15;
+							leafid=16;
 						}
 					}
 				}
@@ -1182,17 +1180,17 @@
 					document.getElementById("hDuraion").style.color='orange'
 					if(score[2]<=1.6875){
 						document.getElementById("hInvolvement").style.color='orange'
-						leafid=17;
+						leafid=9;
 					}
 					else{
 						document.getElementById("hInvolvement").style.color='orange'
 						if(score[8]<=1.5){
 							document.getElementById("hComplexity").style.color='orange'
-							leafid=9;
+							leafid=17;
 						}
 						else{
 							document.getElementById("hComplexity").style.color='orange'
-							leafid=17;
+							leafid=18;
 						}
 					}
 					
@@ -1206,22 +1204,22 @@
 						document.getElementById("hAVQuality").style.color='orange'
 						if(score[7]<=3.875){
 							document.getElementById("hAttitude").style.color='orange'
-							leafid=20;
+							leafid=19;
 						}
 						else{
 							document.getElementById("hAttitude").style.color='orange'
-							leafid=19;
+							leafid=20;
 						}
 					}
 					else{
 						document.getElementById("hAVQuality").style.color='orange'
 						if(score[7]<=3.625){
 							document.getElementById("hAttitude").style.color='orange'
-							leafid=22;
+							leafid=21;
 						}
 						else{
 							document.getElementById("hAttitude").style.color='orange'
-							leafid=21;
+							leafid=22;
 						}					
 					}
 				}
@@ -1229,11 +1227,11 @@
 					document.getElementById("hDuraion").style.color='orange'
 					if(score[4]<=3.75){
 						document.getElementById("hCreativity").style.color='orange'
-						leafid=14;
+						leafid=13;
 					}
 					else{
 						document.getElementById("hCreativity").style.color='orange'
-						leafid=13;
+						leafid=14;
 					}
 				}
 			}
@@ -1245,17 +1243,17 @@
 					document.getElementById("hRelevance").style.color='orange'
 					if(score[3]<=1.5){
 						document.getElementById("hPurchaseIntent").style.color='orange'
-						leafid=38;
+						leafid=30;
 					}
 					else{
 						document.getElementById("hPurchaseIntent").style.color='orange'
 						if(score[2]<=1.5625){
 							document.getElementById("hInvolvement").style.color='orange'
-							leafid=39;	
+							leafid=38;	
 						}
 						else{
 							document.getElementById("hInvolvement").style.color='orange'
-							leafid=38;
+							leafid=39;
 						}
 					}
 				}
@@ -1265,22 +1263,22 @@
 						document.getElementById("hAttitude").style.color='orange'
 						if(score[4]<=3.75){
 							document.getElementById("hCreativity").style.color='orange'
-							leafid=41;
+							leafid=40;
 						}
 						else{
 							document.getElementById("hCreativity").style.color='orange'
-							leafid=40;
+							leafid=41;
 						}
 					}
 					else{
 						document.getElementById("hAttitude").style.color='orange'
 						if(score[2]<=2.0625){
 							document.getElementById("hInvolvement").style.color='orange'
-							leafid=43;
+							leafid=42;
 						}
 						else{
 							document.getElementById("hInvolvement").style.color='orange'
-							leafid=42;
+							leafid=43;
 						}					
 					}
 				}
@@ -1293,22 +1291,22 @@
 							document.getElementById("hDuraion").style.color='orange'						
 							if(score[2]<=4.0625){
 								document.getElementById("hInvolvement").style.color='orange'							
-								leafid=45;
+								leafid=44;
 							}
 							else{
 								document.getElementById("hInvolvement").style.color='orange'
-								leafid=44;
+								leafid=45;
 							}
 						}
 						else{
 							document.getElementById("hDuraion").style.color='orange'						
 							if(score[3]<=5.5){
 								document.getElementById("hPurchaseIntent").style.color='orange'
-								leafid=47;
+								leafid=46;
 							}
 							else{
 								document.getElementById("hPurchaseIntent").style.color='orange'
-								leafid=46;
+								leafid=47;
 							}						
 						}
 					}
@@ -1316,11 +1314,11 @@
 					document.getElementById("hRelevance").style.color='orange'				
 						if(score[6]<=5.625){
 							document.getElementById("hAVQuality").style.color='orange'
-							leafid=37;
+							leafid=36;
 						}
 						else{
 							document.getElementById("hAVQuality").style.color='orange'
-							leafid=36;
+							leafid=37;
 						}					
 					}
 			}
@@ -1332,11 +1330,11 @@
 					document.getElementById("hCreativity").style.color='orange'
 					if(score[7]<=6.375){
 						document.getElementById("hAttitude").style.color='orange'
-						leafid=56;
+						leafid=55;
 					}
 					else{
 						document.getElementById("hAttitude").style.color='orange'
-						leafid=55;
+						leafid=56;
 					}
 				}
 				else{
@@ -1345,16 +1343,16 @@
 						document.getElementById("hCreativity").style.color='orange'
 						if(score[7]<=5.125){
 							document.getElementById("hAttitude").style.color='orange'
-							leafid=64;
+							leafid=63;
 						}
 						else{
 							document.getElementById("hAttitude").style.color='orange'
-							leafid=63;
+							leafid=64;
 						}
 					}
 					else{
 						document.getElementById("hCreativity").style.color='orange'
-						leafid=64;
+						leafid=58;
 					}
 				}
 			}
@@ -1368,22 +1366,22 @@
 						document.getElementById("hRelevance").style.color='orange'
 						if(score[5]<=1.75){
 							document.getElementById("hRelevance").style.color='orange'
-							leafid=66;
+							leafid=65;
 						}
 						else{
 							document.getElementById("hRelevance").style.color='orange'
-							leafid=65;
+							leafid=66;
 						}
 					}
 					else{
 						document.getElementById("hRelevance").style.color='orange'
 						if(score[1]<=1.75){
 							document.getElementById("hDuraion").style.color='orange'
-							leafid=68;
+							leafid=67;
 						}
 						else{
 							document.getElementById("hDuraion").style.color='orange'
-							leafid=67;
+							leafid=68;
 						}										
 					}
 				}
@@ -1391,17 +1389,17 @@
 					document.getElementById("hAVQuality").style.color='orange'
 					if(score[8]<=3.5){
 						document.getElementById("hComplexity").style.color='orange'
-						leafid=69;
+						leafid=61;
 					}
 					else{
 						document.getElementById("hComplexity").style.color='orange'
 						if(score[3]<=6.5){
 							document.getElementById("hPurchaseIntent").style.color='orange'
-							leafid=70;
+							leafid=69;
 						}
 						else{
 							document.getElementById("hPurchaseIntent").style.color='orange'
-							leafid=69;
+							leafid=70;
 						}					
 					}
 				}
@@ -1415,7 +1413,7 @@
 		
 		
 		frame.contentWindow.postMessage(-leafid, '*'); 
-
+		console.log(-leafid)
 
 		if(arrdata=="design"){
 			switch (leafid){
@@ -1456,6 +1454,7 @@
   					vnum=7
   					break;
 			}
+
 		}
 		else{
 			if(arrdata="fashion"){
@@ -1499,7 +1498,7 @@
 				case 37:
   					vnum=7
   					break;
-			}			
+			}				
 			}
 			else{		
 			if(arrdata="technology"){
@@ -1545,7 +1544,6 @@
 			}				
 			}
 		
-
 	}
 
 	</script>
