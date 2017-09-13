@@ -7,11 +7,11 @@
             </div>
             
             <div class="col-xs-8 col-sm-4 placeholder demo2">
-             <img src="<?php echo base_url();?>application/video/unsuccess.jpg" onclick="Showvideo()" height="150" width="200">
+             <img src="<?php echo base_url();?>application/video/unsuccess.jpg" onclick="Showvideo1()" height="150" width="200">
             </div>
  
             <div class="col-xs-8 col-sm-4 placeholder demo3">
-             <img src="<?php echo base_url();?>application/video/unsuccess.jpg" onclick="Showvideo()" height="150" width="200">
+             <img src="<?php echo base_url();?>application/video/best.png" onclick="Showvideo2()" height="150" width="200">
             </div>          	
             	
 			

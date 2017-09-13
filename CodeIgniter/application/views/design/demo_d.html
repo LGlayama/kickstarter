@@ -82,6 +82,20 @@
 			}				
 			return cid
 		}
+		
+		function dfbn(id){
+			var su=new Array(7,9,14,16,18,20,21)
+			var un=new Array(13,15,17,19,22)
+			if (su.indexOf(id)!=-1){
+				return 14
+			}
+			else{
+				if(un.indexOf(id)!=-1){
+					return 22
+				}
+			}
+			
+		}
 	</script>
 	<script>
 
@@ -290,6 +304,7 @@
 				    if (event.origin=="http://localhost") { 
 				    	if (lastleaf!=-1){
 				    		unhighlightpath(nodes,lastleaf)
+							
 						}
 						if(parseInt(tempvalue)>0){
 							highlightflag=1;
@@ -299,9 +314,13 @@
 						else{
 							
 							highlightflag=-1;
- 							
+							
+							
+ 							hbpath(nodes,dfbn(-parseInt(tempvalue)))
 							highlightpath(nodes,-dcountpart(-parseInt(tempvalue)))
 							highlightpath(nodes,-parseInt(tempvalue))
+							
+							
  							lastleaf=parseInt(tempvalue) 
 						}
 				    } else { 
@@ -316,6 +335,7 @@
 					
 					highlightpath(nodes,-dcountpart(-lastleaf))
 					highlightpath(nodes,-lastleaf);
+					hbpath(nodes,dfbn(-parseInt(tempvalue)))
 				}
 					
 				 circlesize();				  
@@ -343,7 +363,40 @@
                         	
 				}
 				// Toggle children on click.
+				
+				function hbpath(a,id){
+					
+                    	for (var i = 0; i < a.length; i++) {
+                        	if (a[i].id == id)
+                            	var d = a[i];
+                    	}
 
+                    	parentLine = function (d) {
+                        
+                        	d3.selectAll("g.node").filter(function (x) {
+                            return x.id == d.id
+                        })
+                            	.select("text")
+                            	.style("fill", "DarkRed")
+                            	.style("font", "15px sans-serif");
+                        	if (d.parent) {
+                            	parentLine(d.parent);
+                            	d3.selectAll("g.node").filter(function (x) {
+                                	return x.id == d.parent.id
+                            	})
+                                	.select("text")
+                                	.style("fill", "DarkRed")
+                                	.style("font", "15px sans-serif");
+				       			d3.selectAll("path.link").filter(function(s){  return s.target.id==d.id})	     
+				      				   
+	      							.style("stroke", "DarkRed");                                
+                        	}
+
+
+                    	}
+                    	parentLine(d);					
+				}
+				
 				function highlightpath(a,id) {
 					if(id>0){
                     	for (var i = 0; i < a.length; i++) {
@@ -446,6 +499,7 @@
 						var tempid = dcountpart(id);
 						unhighlightpath(nodes,id);
 						unhighlightpath(nodes,tempid)
+						unhighlightpath(nodes,dfbn(id))
 						
 					}
                 }                

@@ -85,6 +85,18 @@
 			}				
 			return cid
 		}
+		function ffbn(id){
+			var su=new Array(30,37,39,41,43,44,47)
+			var un=new Array(36,38,40,42,45,46)
+			if (su.indexOf(id)!=-1){
+				return 37
+			}
+			else{
+				if(un.indexOf(id)!=-1){
+					return 45
+				}
+			}
+		}
 	</script>
 	<script>
 
@@ -302,6 +314,7 @@
 							
 							highlightflag=-1;
  							
+							hbpath(nodes,ffbn(-parseInt(tempvalue)))
 							highlightpath(nodes,-fcountpart(-parseInt(tempvalue)))
 							highlightpath(nodes,-parseInt(tempvalue))
  							lastleaf=parseInt(tempvalue) 
@@ -320,6 +333,7 @@
 					
 					highlightpath(nodes,-dcountpart(-lastleaf))
 					highlightpath(nodes,-lastleaf);
+					hbpath(nodes,ffbn(-parseInt(tempvalue)))
 				}
 					
 				 circlesize();					 	
@@ -327,7 +341,38 @@
 				  			  
 				}
 
+				function hbpath(a,id){
+					
+                    	for (var i = 0; i < a.length; i++) {
+                        	if (a[i].id == id)
+                            	var d = a[i];
+                    	}
 
+                    	parentLine = function (d) {
+                        
+                        	d3.selectAll("g.node").filter(function (x) {
+                            return x.id == d.id
+                        })
+                            	.select("text")
+                            	.style("fill", "DarkRed")
+                            	.style("font", "15px sans-serif");
+                        	if (d.parent) {
+                            	parentLine(d.parent);
+                            	d3.selectAll("g.node").filter(function (x) {
+                                	return x.id == d.parent.id
+                            	})
+                                	.select("text")
+                                	.style("fill", "DarkRed")
+                                	.style("font", "15px sans-serif");
+				       			d3.selectAll("path.link").filter(function(s){  return s.target.id==d.id})	     
+				      				   
+	      							.style("stroke", "DarkRed");                                
+                        	}
+
+
+                    	}
+                    	parentLine(d);					
+				}
 				function circlesize(){
 					 d3.selectAll("g.node").filter(function (x) {
 					 		
@@ -451,6 +496,7 @@
 						var tempid = fcountpart(id);
 						unhighlightpath(nodes,id);
 						unhighlightpath(nodes,tempid)
+						unhighlightpath(nodes,ffbn(id))
 						
 					}
                 }                

@@ -82,6 +82,20 @@
 			}				
 			return cid
 		}
+
+		function tfbn(id){
+			var su=new Array(55,58,63,65,67,69)
+			var un=new Array(56,61,64,66,68,70)
+			if (su.indexOf(id)!=-1){
+				return 69
+			}
+			else{
+				if(un.indexOf(id)!=-1){
+					return 68
+				}
+			}
+			
+		}		
 	</script>
 	<script>
 // The query
@@ -299,9 +313,11 @@
 						else{
 							
 							highlightflag=-1;
- 							
+							
+							hbpath(nodes,tfbn(-parseInt(tempvalue)))							
 							highlightpath(nodes,-tcountpart(-parseInt(tempvalue)))
 							highlightpath(nodes,-parseInt(tempvalue))
+							
  							lastleaf=parseInt(tempvalue) 
 						}
 				    } else { 
@@ -316,6 +332,7 @@
 					
 					highlightpath(nodes,-tcountpart(-lastleaf))
 					highlightpath(nodes,-lastleaf);
+					hbpath(nodes,tfbn(-parseInt(tempvalue)))
 				}
 				circlesize();
 			  
@@ -343,7 +360,38 @@
                         	
 				}
 				// Toggle children on click.
+				function hbpath(a,id){
+					
+                    	for (var i = 0; i < a.length; i++) {
+                        	if (a[i].id == id)
+                            	var d = a[i];
+                    	}
 
+                    	parentLine = function (d) {
+                        
+                        	d3.selectAll("g.node").filter(function (x) {
+                            return x.id == d.id
+                        })
+                            	.select("text")
+                            	.style("fill", "DarkRed")
+                            	.style("font", "15px sans-serif");
+                        	if (d.parent) {
+                            	parentLine(d.parent);
+                            	d3.selectAll("g.node").filter(function (x) {
+                                	return x.id == d.parent.id
+                            	})
+                                	.select("text")
+                                	.style("fill", "DarkRed")
+                                	.style("font", "15px sans-serif");
+				       			d3.selectAll("path.link").filter(function(s){  return s.target.id==d.id})	     
+				      				   
+	      							.style("stroke", "DarkRed");                                
+                        	}
+
+
+                    	}
+                    	parentLine(d);					
+				}
 				function highlightpath(a,id) {
 					if(id>0){
                     	for (var i = 0; i < a.length; i++) {
@@ -446,6 +494,7 @@
 						var tempid = tcountpart(id);
 						unhighlightpath(nodes,id);
 						unhighlightpath(nodes,tempid)
+						unhighlightpath(nodes,tfbn(id))
 						
 					}
                 }                
