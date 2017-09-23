@@ -135,7 +135,15 @@
 	}
 
 	function highlight(){
-
+		
+		var uploadbox=document.getElementById("select").value;
+		console.log(uploadbox)
+		
+		if (uploadbox=="blank"){
+			alert("please upload the video before highlight")
+		}
+		else
+		{
 
 		var arrdata=  document.getElementById("uniqueID").value;
 		console.log(arrdata)
@@ -569,6 +577,7 @@
 		
 
 	}
+		}
 		
 	function resetbar(){
 			if(document.getElementById("R1")!=null){
@@ -1496,16 +1505,36 @@
 		
 	function getgood(){
 		
-		var gg = window.open("../../application/popup/getgood.html","success video","height=800, width=400, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no, status=no");
+		var arrdata = document.getElementById("uniqueID").value;
+		var numvalue= parseInt(document.getElementById("select2").value);
+		var frame = document.getElementById('iframe');
 		
-//
-//		var w1=gg.document
-//		var w2=gg.document
-//		var w3=gg.document
-//		console.log(w1);
-//		console.log(w2);
-//		console.log(w3);
-//		
+		console.log(typeof(numvalue))
+		
+		var senddata=new Array()
+		var temps=new Array()
+		senddata[0]=arrdata
+		senddata[1]=numvalue
+		
+		
+		if (arrdata=="design" || arrdata=="fashion" || arrdata=="technology") {
+		
+			oldsrc=document.getElementById('iframe').src
+			document.getElementById('iframe').src="../../application/views/player/player.html";
+
+			frame.contentWindow.postMessage(senddata, '*'); 
+			
+			closewin(numvalue)
+		}
+		else{
+			console.log(numvalue)
+			temps=closewin(numvalue)
+			
+			
+			frame.contentWindow.postMessage(temps, '*'); 
+		}
+		
+				
 	}
 	
 	function closewin(num){
@@ -1522,154 +1551,740 @@
 		cscore[7]=0;
 		cscore[8]=0;
 		
-		if(num==1){
-			if(document.getElementById("R1")!=null){
-				document.getElementById("R1").value = "4.5";
-				document.getElementById("PositiveMindset").innerHTML="4.5";
-				cscore[0]=4.5;
-				
-			}
-			if(document.getElementById("R2")!=null){
-				document.getElementById("R2").value = "4";
-				document.getElementById("Duraion").innerHTML="4";
-				cscore[1]=4;
-			}
-			if(document.getElementById("R3")!=null){
-				document.getElementById("R3").value = "5";
-				document.getElementById("Involvement").innerHTML="5";
-				cscore[2]=5;
-			}
-			if(document.getElementById("R4")!=null){
-				document.getElementById("R4").value = "5";
-				document.getElementById("PurchaseIntent").innerHTML="5";
-				cscore[3]=5;
-			}
-			if(document.getElementById("R5")!=null){
-				document.getElementById("R5").value = "4.5";
-				document.getElementById("Creativity").innerHTML="4.5";
-				cscore[4]=4.5;
-			}
-			if(document.getElementById("R6")!=null){
-				document.getElementById("R6").value = "6";
-				document.getElementById("Relevance").innerHTML="6";
-				cscore[5]=6;
-			}
-			if(document.getElementById("R7")!=null){
-				document.getElementById("R7").value = "5.5";
-				document.getElementById("AVQuality").innerHTML="5.5";
-				cscore[6]=5.5;
-			}
-			if(document.getElementById("R8")!=null){
-				document.getElementById("R8").value = "5";
-				document.getElementById("Attitude").innerHTML="5";
-				cscore[7]=5;
-			}
-			if(document.getElementById("R9")!=null){
-				document.getElementById("R9").value = "5.5";
-				document.getElementById("Complexity").innerHTML="5.5";
-				cscore[8]=5.5;
-			}	
-		}
-
-		if(num==2){
-			if(document.getElementById("R1")!=null){
-				document.getElementById("R1").value = "3.5";
-				document.getElementById("PositiveMindset").innerHTML="3.5";
-				cscore[0]=3.5;
-			}
-			if(document.getElementById("R2")!=null){
-				document.getElementById("R2").value = "3";
-				document.getElementById("Duraion").innerHTML="3";
-				cscore[1]=3;
-			}
-			if(document.getElementById("R3")!=null){
-				document.getElementById("R3").value = "5";
-				document.getElementById("Involvement").innerHTML="5";
-				cscore[2]=5;
-			}
-			if(document.getElementById("R4")!=null){
-				document.getElementById("R4").value = "5";
-				document.getElementById("PurchaseIntent").innerHTML="5";
-				cscore[3]=5;
-			}
-			if(document.getElementById("R5")!=null){
-				document.getElementById("R5").value = "5.5";
-				document.getElementById("Creativity").innerHTML="5.5";
-				cscore[4]=5.5;
-			}
-			if(document.getElementById("R6")!=null){
-				document.getElementById("R6").value = "4.5";
-				document.getElementById("Relevance").innerHTML="4.5";
-				cscore[5]=4.5;
-			}
-			if(document.getElementById("R7")!=null){
-				document.getElementById("R7").value = "4.5";
-				document.getElementById("AVQuality").innerHTML="4.5";
-				cscore[6]=4.5;
-			}
-			if(document.getElementById("R8")!=null){
-				document.getElementById("R8").value = "6";
-				document.getElementById("Attitude").innerHTML="6";
-				cscore[7]=6;
-			}
-			if(document.getElementById("R9")!=null){
-				document.getElementById("R9").value = "5";
-				document.getElementById("Complexity").innerHTML="5";
-				cscore[8]=5;
-			}	
-		}
-
-		if(num==3){
-			if(document.getElementById("R1")!=null){
-				document.getElementById("R1").value = "3.5";
-				document.getElementById("PositiveMindset").innerHTML="3.5";
-				cscore[0]=3.5;
-			}
-			if(document.getElementById("R2")!=null){
-				document.getElementById("R2").value = "2.5";
-				document.getElementById("Duraion").innerHTML="2.5";
-				cscore[1]=2.5;
-			}
-			if(document.getElementById("R3")!=null){
-				document.getElementById("R3").value = "4.5";
-				document.getElementById("Involvement").innerHTML="4.5";
-				cscore[2]=4.5;
-			}
-			if(document.getElementById("R4")!=null){
-				document.getElementById("R4").value = "4";
-				document.getElementById("PurchaseIntent").innerHTML="4";
-				cscore[3]=4;
-			}
-			if(document.getElementById("R5")!=null){
-				document.getElementById("R5").value = "5";
-				document.getElementById("Creativity").innerHTML="5";
-				cscore[4]=5;
-			}
-			if(document.getElementById("R6")!=null){
-				document.getElementById("R6").value = "5.5";
-				document.getElementById("Relevance").innerHTML="5.5";
-				cscore[5]=5.5;
-			}
-			if(document.getElementById("R7")!=null){
-				document.getElementById("R7").value = "5";
-				document.getElementById("AVQuality").innerHTML="5";
-				cscore[6]=5;
-			}
-			if(document.getElementById("R8")!=null){
-				document.getElementById("R8").value = "5.5";
-				document.getElementById("Attitude").innerHTML="5.5";
-				cscore[7]=5.5;
-			}
-			if(document.getElementById("R9")!=null){
-				document.getElementById("R9").value = "5.5";
-				document.getElementById("Complexity").innerHTML="5.5";
-				cscore[8]=5.5;
-			}
-		}
-	
-		cframe.contentWindow.postMessage(cscore, '*'); 
-	}
+		if(document.getElementById("uniqueID").value=='design'){
 		
+			if(num==1){
+				if(document.getElementById("R1")!=null){
+					document.getElementById("R1").value = "4.5";
+					document.getElementById("PositiveMindset").innerHTML="4.5";
+					cscore[0]=4.5;
+
+				}
+				if(document.getElementById("R2")!=null){
+					document.getElementById("R2").value = "4";
+					document.getElementById("Duraion").innerHTML="4";
+					cscore[1]=4;
+				}
+				if(document.getElementById("R3")!=null){
+					document.getElementById("R3").value = "5";
+					document.getElementById("Involvement").innerHTML="5";
+					cscore[2]=5;
+				}
+				if(document.getElementById("R4")!=null){
+					document.getElementById("R4").value = "5";
+					document.getElementById("PurchaseIntent").innerHTML="5";
+					cscore[3]=5;
+				}
+				if(document.getElementById("R5")!=null){
+					document.getElementById("R5").value = "4.5";
+					document.getElementById("Creativity").innerHTML="4.5";
+					cscore[4]=4.5;
+				}
+				if(document.getElementById("R6")!=null){
+					document.getElementById("R6").value = "6";
+					document.getElementById("Relevance").innerHTML="6";
+					cscore[5]=6;
+				}
+				if(document.getElementById("R7")!=null){
+					document.getElementById("R7").value = "5.5";
+					document.getElementById("AVQuality").innerHTML="5.5";
+					cscore[6]=5.5;
+				}
+				if(document.getElementById("R8")!=null){
+					document.getElementById("R8").value = "5";
+					document.getElementById("Attitude").innerHTML="5";
+					cscore[7]=5;
+				}
+				if(document.getElementById("R9")!=null){
+					document.getElementById("R9").value = "5.5";
+					document.getElementById("Complexity").innerHTML="5.5";
+					cscore[8]=5.5;
+				}	
+			}
+
+			if(num==2){
+				if(document.getElementById("R1")!=null){
+					document.getElementById("R1").value = "3.5";
+					document.getElementById("PositiveMindset").innerHTML="3.5";
+					cscore[0]=3.5;
+				}
+				if(document.getElementById("R2")!=null){
+					document.getElementById("R2").value = "3";
+					document.getElementById("Duraion").innerHTML="3";
+					cscore[1]=3;
+				}
+				if(document.getElementById("R3")!=null){
+					document.getElementById("R3").value = "5";
+					document.getElementById("Involvement").innerHTML="5";
+					cscore[2]=5;
+				}
+				if(document.getElementById("R4")!=null){
+					document.getElementById("R4").value = "5";
+					document.getElementById("PurchaseIntent").innerHTML="5";
+					cscore[3]=5;
+				}
+				if(document.getElementById("R5")!=null){
+					document.getElementById("R5").value = "5.5";
+					document.getElementById("Creativity").innerHTML="5.5";
+					cscore[4]=5.5;
+				}
+				if(document.getElementById("R6")!=null){
+					document.getElementById("R6").value = "4.5";
+					document.getElementById("Relevance").innerHTML="4.5";
+					cscore[5]=4.5;
+				}
+				if(document.getElementById("R7")!=null){
+					document.getElementById("R7").value = "4.5";
+					document.getElementById("AVQuality").innerHTML="4.5";
+					cscore[6]=4.5;
+				}
+				if(document.getElementById("R8")!=null){
+					document.getElementById("R8").value = "6";
+					document.getElementById("Attitude").innerHTML="6";
+					cscore[7]=6;
+				}
+				if(document.getElementById("R9")!=null){
+					document.getElementById("R9").value = "5";
+					document.getElementById("Complexity").innerHTML="5";
+					cscore[8]=5;
+				}	
+			}
+
+			if(num==3){
+				if(document.getElementById("R1")!=null){
+					document.getElementById("R1").value = "3.5";
+					document.getElementById("PositiveMindset").innerHTML="3.5";
+					cscore[0]=3.5;
+				}
+				if(document.getElementById("R2")!=null){
+					document.getElementById("R2").value = "2.5";
+					document.getElementById("Duraion").innerHTML="2.5";
+					cscore[1]=2.5;
+				}
+				if(document.getElementById("R3")!=null){
+					document.getElementById("R3").value = "4.5";
+					document.getElementById("Involvement").innerHTML="4.5";
+					cscore[2]=4.5;
+				}
+				if(document.getElementById("R4")!=null){
+					document.getElementById("R4").value = "4";
+					document.getElementById("PurchaseIntent").innerHTML="4";
+					cscore[3]=4;
+				}
+				if(document.getElementById("R5")!=null){
+					document.getElementById("R5").value = "5";
+					document.getElementById("Creativity").innerHTML="5";
+					cscore[4]=5;
+				}
+				if(document.getElementById("R6")!=null){
+					document.getElementById("R6").value = "5.5";
+					document.getElementById("Relevance").innerHTML="5.5";
+					cscore[5]=5.5;
+				}
+				if(document.getElementById("R7")!=null){
+					document.getElementById("R7").value = "5";
+					document.getElementById("AVQuality").innerHTML="5";
+					cscore[6]=5;
+				}
+				if(document.getElementById("R8")!=null){
+					document.getElementById("R8").value = "5.5";
+					document.getElementById("Attitude").innerHTML="5.5";
+					cscore[7]=5.5;
+				}
+				if(document.getElementById("R9")!=null){
+					document.getElementById("R9").value = "5.5";
+					document.getElementById("Complexity").innerHTML="5.5";
+					cscore[8]=5.5;
+				}
+			}
+
+			if(num==4){
+				if(document.getElementById("R1")!=null){
+					document.getElementById("R1").value = "3.5";
+					document.getElementById("PositiveMindset").innerHTML="3.5";
+					cscore[0]=3.5;
+				}
+				if(document.getElementById("R2")!=null){
+					document.getElementById("R2").value = "3";
+					document.getElementById("Duraion").innerHTML="3";
+					cscore[1]=3;
+				}
+				if(document.getElementById("R3")!=null){
+					document.getElementById("R3").value = "5";
+					document.getElementById("Involvement").innerHTML="5";
+					cscore[2]=5;
+				}
+				if(document.getElementById("R4")!=null){
+					document.getElementById("R4").value = "4.5";
+					document.getElementById("PurchaseIntent").innerHTML="4.5";
+					cscore[3]=4.5;
+				}
+				if(document.getElementById("R5")!=null){
+					document.getElementById("R5").value = "4";
+					document.getElementById("Creativity").innerHTML="4";
+					cscore[4]=4;
+				}
+				if(document.getElementById("R6")!=null){
+					document.getElementById("R6").value = "4.5";
+					document.getElementById("Relevance").innerHTML="4.5";
+					cscore[5]=4.5;
+				}
+				if(document.getElementById("R7")!=null){
+					document.getElementById("R7").value = "3.5";
+					document.getElementById("AVQuality").innerHTML="3.5";
+					cscore[6]=3.5;
+				}
+				if(document.getElementById("R8")!=null){
+					document.getElementById("R8").value = "5";
+					document.getElementById("Attitude").innerHTML="5";
+					cscore[7]=5;
+				}
+				if(document.getElementById("R9")!=null){
+					document.getElementById("R9").value = "5";
+					document.getElementById("Complexity").innerHTML="5";
+					cscore[8]=5;
+				}
+			}
+
+			if(num==5){
+				if(document.getElementById("R1")!=null){
+					document.getElementById("R1").value = "4";
+					document.getElementById("PositiveMindset").innerHTML="4";
+					cscore[0]=4;
+				}
+				if(document.getElementById("R2")!=null){
+					document.getElementById("R2").value = "2.5";
+					document.getElementById("Duraion").innerHTML="2.5";
+					cscore[1]=2.5;
+				}
+				if(document.getElementById("R3")!=null){
+					document.getElementById("R3").value = "5";
+					document.getElementById("Involvement").innerHTML="5";
+					cscore[2]=5;
+				}
+				if(document.getElementById("R4")!=null){
+					document.getElementById("R4").value = "5";
+					document.getElementById("PurchaseIntent").innerHTML="5";
+					cscore[3]=5;
+				}
+				if(document.getElementById("R5")!=null){
+					document.getElementById("R5").value = "5.5";
+					document.getElementById("Creativity").innerHTML="5.5";
+					cscore[4]=5.5;
+				}
+				if(document.getElementById("R6")!=null){
+					document.getElementById("R6").value = "6";
+					document.getElementById("Relevance").innerHTML="6";
+					cscore[5]=6;
+				}
+				if(document.getElementById("R7")!=null){
+					document.getElementById("R7").value = "5.5";
+					document.getElementById("AVQuality").innerHTML="5.5";
+					cscore[6]=5.5;
+				}
+				if(document.getElementById("R8")!=null){
+					document.getElementById("R8").value = "6";
+					document.getElementById("Attitude").innerHTML="6";
+					cscore[7]=6;
+					}
+				if(document.getElementById("R9")!=null){
+					document.getElementById("R9").value = "6";
+					document.getElementById("Complexity").innerHTML="6";
+					cscore[8]=6;
+				}
+				}
+		}
+		else{
+			if(document.getElementById("uniqueID").value=='fashion'){
+			
+				if (num==1){
+					if(document.getElementById("R1")!=null){
+						document.getElementById("R1").value = "4.5";
+						document.getElementById("PositiveMindset").innerHTML="4.5";
+						cscore[0]=4.5;
+
+					}
+					if(document.getElementById("R2")!=null){
+						document.getElementById("R2").value = "4";
+						document.getElementById("Duraion").innerHTML="4";
+						cscore[1]=4;
+					}
+					if(document.getElementById("R3")!=null){
+						document.getElementById("R3").value = "5";
+						document.getElementById("Involvement").innerHTML="5";
+						cscore[2]=5;
+					}
+					if(document.getElementById("R4")!=null){
+						document.getElementById("R4").value = "5";
+						document.getElementById("PurchaseIntent").innerHTML="5";
+						cscore[3]=5;
+					}
+					if(document.getElementById("R5")!=null){
+						document.getElementById("R5").value = "4.5";
+						document.getElementById("Creativity").innerHTML="4.5";
+						cscore[4]=4.5;
+					}
+					if(document.getElementById("R6")!=null){
+						document.getElementById("R6").value = "6";
+						document.getElementById("Relevance").innerHTML="6";
+						cscore[5]=6;
+					}
+					if(document.getElementById("R7")!=null){
+						document.getElementById("R7").value = "5.5";
+						document.getElementById("AVQuality").innerHTML="5.5";
+						cscore[6]=5.5;
+					}
+					if(document.getElementById("R8")!=null){
+						document.getElementById("R8").value = "5";
+						document.getElementById("Attitude").innerHTML="5";
+						cscore[7]=5;
+					}
+					if(document.getElementById("R9")!=null){
+						document.getElementById("R9").value = "5.5";
+						document.getElementById("Complexity").innerHTML="5.5";
+						cscore[8]=5.5;
+					}
+
+				}
+				if (num==2){
+					if(document.getElementById("R1")!=null){
+						document.getElementById("R1").value = "3.5";
+						document.getElementById("PositiveMindset").innerHTML="3.5";
+						cscore[0]=3.5;
+					}
+					if(document.getElementById("R2")!=null){
+						document.getElementById("R2").value = "3";
+						document.getElementById("Duraion").innerHTML="3";
+						cscore[1]=3;
+					}
+					if(document.getElementById("R3")!=null){
+						document.getElementById("R3").value = "5";
+						document.getElementById("Involvement").innerHTML="5";
+						cscore[2]=5;
+					}
+					if(document.getElementById("R4")!=null){
+						document.getElementById("R4").value = "5";
+						document.getElementById("PurchaseIntent").innerHTML="5";
+						cscore[3]=5;
+					}
+					if(document.getElementById("R5")!=null){
+						document.getElementById("R5").value = "5.5";
+						document.getElementById("Creativity").innerHTML="5.5";
+						cscore[4]=5.5;
+					}
+					if(document.getElementById("R6")!=null){
+						document.getElementById("R6").value = "4.5";
+						document.getElementById("Relevance").innerHTML="4.5";
+						cscore[5]=4.5;
+					}
+					if(document.getElementById("R7")!=null){
+						document.getElementById("R7").value = "4.5";
+						document.getElementById("AVQuality").innerHTML="4.5";
+						cscore[6]=4.5;
+					}
+					if(document.getElementById("R8")!=null){
+						document.getElementById("R8").value = "6";
+						document.getElementById("Attitude").innerHTML="6";
+						cscore[7]=6;
+					}
+					if(document.getElementById("R9")!=null){
+						document.getElementById("R9").value = "5";
+						document.getElementById("Complexity").innerHTML="5";
+						cscore[8]=5;
+					}
+				}
+				if (num==3){
+					if(document.getElementById("R1")!=null){
+						document.getElementById("R1").value = "3.5";
+						document.getElementById("PositiveMindset").innerHTML="3.5";
+						cscore[0]=3.5;
+					}
+					if(document.getElementById("R2")!=null){
+						document.getElementById("R2").value = "2.5";
+						document.getElementById("Duraion").innerHTML="2.5";
+						cscore[1]=2.5;
+					}
+					if(document.getElementById("R3")!=null){
+						document.getElementById("R3").value = "4.5";
+						document.getElementById("Involvement").innerHTML="4.5";
+						cscore[2]=4.5;
+					}
+					if(document.getElementById("R4")!=null){
+						document.getElementById("R4").value = "4";
+						document.getElementById("PurchaseIntent").innerHTML="4";
+						cscore[3]=4;
+					}
+					if(document.getElementById("R5")!=null){
+						document.getElementById("R5").value = "5";
+						document.getElementById("Creativity").innerHTML="5";
+						cscore[4]=5;
+					}
+					if(document.getElementById("R6")!=null){
+						document.getElementById("R6").value = "5.5";
+						document.getElementById("Relevance").innerHTML="5.5";
+						cscore[5]=5.5;
+					}
+					if(document.getElementById("R7")!=null){
+						document.getElementById("R7").value = "5";
+						document.getElementById("AVQuality").innerHTML="5";
+						cscore[6]=5;
+					}
+					if(document.getElementById("R8")!=null){
+						document.getElementById("R8").value = "5.5";
+						document.getElementById("Attitude").innerHTML="5.5";
+						cscore[7]=5.5;
+					}
+					if(document.getElementById("R9")!=null){
+						document.getElementById("R9").value = "5.5";
+						document.getElementById("Complexity").innerHTML="5.5";
+						cscore[8]=5.5;
+					}
+				}
+				if (num==4){
+					if(document.getElementById("R1")!=null){
+						document.getElementById("R1").value = "3.5";
+						document.getElementById("PositiveMindset").innerHTML="3.5";
+						cscore[0]=3.5;
+					}
+					if(document.getElementById("R2")!=null){
+						document.getElementById("R2").value = "3";
+						document.getElementById("Duraion").innerHTML="3";
+						cscore[1]=3;
+					}
+					if(document.getElementById("R3")!=null){
+						document.getElementById("R3").value = "5";
+						document.getElementById("Involvement").innerHTML="5";
+						cscore[2]=5;
+					}
+					if(document.getElementById("R4")!=null){
+						document.getElementById("R4").value = "4.5";
+						document.getElementById("PurchaseIntent").innerHTML="4.5";
+						cscore[3]=4.5;
+					}
+					if(document.getElementById("R5")!=null){
+						document.getElementById("R5").value = "4";
+						document.getElementById("Creativity").innerHTML="4";
+						cscore[4]=4;
+					}
+					if(document.getElementById("R6")!=null){
+						document.getElementById("R6").value = "4.5";
+						document.getElementById("Relevance").innerHTML="4.5";
+						cscore[5]=4.5;
+					}
+					if(document.getElementById("R7")!=null){
+						document.getElementById("R7").value = "3.5";
+						document.getElementById("AVQuality").innerHTML="3.5";
+						cscore[6]=3.5;
+					}
+					if(document.getElementById("R8")!=null){
+						document.getElementById("R8").value = "5";
+						document.getElementById("Attitude").innerHTML="5";
+						cscore[7]=5;
+					}
+					if(document.getElementById("R9")!=null){
+						document.getElementById("R9").value = "5";
+						document.getElementById("Complexity").innerHTML="5";
+						cscore[8]=5;
+					}
+				}
+				if (num==5){
+					if(document.getElementById("R1")!=null){
+						document.getElementById("R1").value = "4";
+						document.getElementById("PositiveMindset").innerHTML="4";
+						cscore[0]=4;
+					}
+					if(document.getElementById("R2")!=null){
+						document.getElementById("R2").value = "2.5";
+						document.getElementById("Duraion").innerHTML="2.5";
+						cscore[1]=2.5;
+					}
+					if(document.getElementById("R3")!=null){
+						document.getElementById("R3").value = "5";
+						document.getElementById("Involvement").innerHTML="5";
+						cscore[2]=5;
+					}
+					if(document.getElementById("R4")!=null){
+						document.getElementById("R4").value = "5";
+						document.getElementById("PurchaseIntent").innerHTML="5";
+						cscore[3]=5;
+					}
+					if(document.getElementById("R5")!=null){
+						document.getElementById("R5").value = "5.5";
+						document.getElementById("Creativity").innerHTML="5.5";
+						cscore[4]=5.5;
+					}
+					if(document.getElementById("R6")!=null){
+						document.getElementById("R6").value = "6";
+						document.getElementById("Relevance").innerHTML="6";
+						cscore[5]=6;
+					}
+					if(document.getElementById("R7")!=null){
+						document.getElementById("R7").value = "5.5";
+						document.getElementById("AVQuality").innerHTML="5.5";
+						cscore[6]=5.5;
+					}
+					if(document.getElementById("R8")!=null){
+						document.getElementById("R8").value = "6";
+						document.getElementById("Attitude").innerHTML="6";
+						cscore[7]=6;
+					}
+					if(document.getElementById("R9")!=null){
+						document.getElementById("R9").value = "6";
+						document.getElementById("Complexity").innerHTML="6";
+						cscore[8]=6;
+					}
+				}
+			
+		}
+			 else{
+				
+				if (num==1){
+						if(document.getElementById("R1")!=null){
+							document.getElementById("R1").value = "3.5";
+							document.getElementById("PositiveMindset").innerHTML="3.5";
+							cscore[0]=3.5;
+
+						}
+						if(document.getElementById("R2")!=null){
+							document.getElementById("R2").value = "4";
+							document.getElementById("Duraion").innerHTML="4";
+							cscore[1]=4;
+						}
+						if(document.getElementById("R3")!=null){
+							document.getElementById("R3").value = "5";
+							document.getElementById("Involvement").innerHTML="5";
+							cscore[2]=5;
+						}
+						if(document.getElementById("R4")!=null){
+							document.getElementById("R4").value = "3.5";
+							document.getElementById("PurchaseIntent").innerHTML="3.5";
+							cscore[3]=3.5;
+						}
+						if(document.getElementById("R5")!=null){
+							document.getElementById("R5").value = "5";
+							document.getElementById("Creativity").innerHTML="5";
+							cscore[4]=5;
+						}
+						if(document.getElementById("R6")!=null){
+							document.getElementById("R6").value = "5";
+							document.getElementById("Relevance").innerHTML="5";
+							cscore[5]=5;
+						}
+						if(document.getElementById("R7")!=null){
+							document.getElementById("R7").value = "5.5";
+							document.getElementById("AVQuality").innerHTML="5.5";
+							cscore[6]=5.5;
+						}
+						if(document.getElementById("R8")!=null){
+							document.getElementById("R8").value = "5.5";
+							document.getElementById("Attitude").innerHTML="5.5";
+							cscore[7]=5.5;
+						}
+						if(document.getElementById("R9")!=null){
+							document.getElementById("R9").value = "6";
+							document.getElementById("Complexity").innerHTML="6";
+							cscore[8]=6;
+						}
+
+				}
+				if (num==2){
+						if(document.getElementById("R1")!=null){
+							document.getElementById("R1").value = "4";
+							document.getElementById("PositiveMindset").innerHTML="4";
+							cscore[0]=4;
+						}
+						if(document.getElementById("R2")!=null){
+							document.getElementById("R2").value = "3.5";
+							document.getElementById("Duraion").innerHTML="3.5";
+							cscore[1]=3.5;
+						}
+						if(document.getElementById("R3")!=null){
+							document.getElementById("R3").value = "5.5";
+							document.getElementById("Involvement").innerHTML="5.5";
+							cscore[2]=5.5;
+						}
+						if(document.getElementById("R4")!=null){
+							document.getElementById("R4").value = "5";
+							document.getElementById("PurchaseIntent").innerHTML="5";
+							cscore[3]=5;
+						}
+						if(document.getElementById("R5")!=null){
+							document.getElementById("R5").value = "5";
+							document.getElementById("Creativity").innerHTML="5";
+							cscore[4]=5;
+						}
+						if(document.getElementById("R6")!=null){
+							document.getElementById("R6").value = "5";
+							document.getElementById("Relevance").innerHTML="5";
+							cscore[5]=5;
+						}
+						if(document.getElementById("R7")!=null){
+							document.getElementById("R7").value = "4.5";
+							document.getElementById("AVQuality").innerHTML="4.5";
+							cscore[6]=4.5;
+						}
+						if(document.getElementById("R8")!=null){
+							document.getElementById("R8").value = "5.5";
+							document.getElementById("Attitude").innerHTML="5.5";
+							cscore[7]=5.5;
+						}
+						if(document.getElementById("R9")!=null){
+							document.getElementById("R9").value = "5.5";
+							document.getElementById("Complexity").innerHTML="5.5";
+							cscore[8]=5.5;
+						}
+					}
+				if (num==3){
+						if(document.getElementById("R1")!=null){
+							document.getElementById("R1").value = "4";
+							document.getElementById("PositiveMindset").innerHTML="4";
+							cscore[0]=4;
+						}
+						if(document.getElementById("R2")!=null){
+							document.getElementById("R2").value = "3";
+							document.getElementById("Duraion").innerHTML="3";
+							cscore[1]=3;
+						}
+						if(document.getElementById("R3")!=null){
+							document.getElementById("R3").value = "5";
+							document.getElementById("Involvement").innerHTML="5";
+							cscore[2]=5;
+						}
+						if(document.getElementById("R4")!=null){
+							document.getElementById("R4").value = "5.5";
+							document.getElementById("PurchaseIntent").innerHTML="5.5";
+							cscore[3]=5.5;
+						}
+						if(document.getElementById("R5")!=null){
+							document.getElementById("R5").value = "5.5";
+							document.getElementById("Creativity").innerHTML="5.5";
+							cscore[4]=5.5;
+						}
+						if(document.getElementById("R6")!=null){
+							document.getElementById("R6").value = "5.5";
+							document.getElementById("Relevance").innerHTML="5.5";
+							cscore[5]=5.5;
+						}
+						if(document.getElementById("R7")!=null){
+							document.getElementById("R7").value = "5.5";
+							document.getElementById("AVQuality").innerHTML="5.5";
+							cscore[6]=5.5;
+						}
+						if(document.getElementById("R8")!=null){
+							document.getElementById("R8").value = "5.5";
+							document.getElementById("Attitude").innerHTML="5.5";
+							rscore[7]=5.5;
+						}
+						if(document.getElementById("R9")!=null){
+							document.getElementById("R9").value = "6";
+							document.getElementById("Complexity").innerHTML="6";
+							rscore[8]=6;
+						}
+					}
+				if (num==4){
+						if(document.getElementById("R1")!=null){
+							document.getElementById("R1").value = "4";
+							document.getElementById("PositiveMindset").innerHTML="4";
+							cscore[0]=4;
+						}
+						if(document.getElementById("R2")!=null){
+							document.getElementById("R2").value = "2.5";
+							document.getElementById("Duraion").innerHTML="2.5";
+							cscore[1]=2.5;
+						}
+						if(document.getElementById("R3")!=null){
+							document.getElementById("R3").value = "5";
+							document.getElementById("Involvement").innerHTML="5";
+							cscore[2]=5;
+						}
+						if(document.getElementById("R4")!=null){
+							document.getElementById("R4").value = "5";
+							document.getElementById("PurchaseIntent").innerHTML="5";
+							cscore[3]=5;
+						}
+						if(document.getElementById("R5")!=null){
+							document.getElementById("R5").value = "5.5";
+							document.getElementById("Creativity").innerHTML="5.5";
+							cscore[4]=5.5;
+						}
+						if(document.getElementById("R6")!=null){
+							document.getElementById("R6").value = "5.5";
+							document.getElementById("Relevance").innerHTML="5.5";
+							cscore[5]=5.5;
+						}
+						if(document.getElementById("R7")!=null){
+							document.getElementById("R7").value = "6";
+							document.getElementById("AVQuality").innerHTML="6";
+							cscore[6]=6;
+						}
+						if(document.getElementById("R8")!=null){
+							document.getElementById("R8").value = "6";
+							document.getElementById("Attitude").innerHTML="6";
+							cscore[7]=6;
+						}
+						if(document.getElementById("R9")!=null){
+							document.getElementById("R9").value = "6";
+							document.getElementById("Complexity").innerHTML="6";
+							cscore[8]=6;
+						}
+					}
+				if (num==5){
+						if(document.getElementById("R1")!=null){
+							document.getElementById("R1").value = "4";
+							document.getElementById("PositiveMindset").innerHTML="4";
+							cscore[0]=4;
+						}
+						if(document.getElementById("R2")!=null){
+							document.getElementById("R2").value = "3.5";
+							document.getElementById("Duraion").innerHTML="3.5";
+							cscore[1]=3.5;
+						}
+						if(document.getElementById("R3")!=null){
+							document.getElementById("R3").value = "6";
+							document.getElementById("Involvement").innerHTML="6";
+							cscore[2]=6;
+						}
+						if(document.getElementById("R4")!=null){
+							document.getElementById("R4").value = "5.5";
+							document.getElementById("PurchaseIntent").innerHTML="5.5";
+							cscore[3]=5.5;
+						}
+						if(document.getElementById("R5")!=null){
+							document.getElementById("R5").value = "5.5";
+							document.getElementById("Creativity").innerHTML="5.5";
+							cscore[4]=5.5;
+						}
+						if(document.getElementById("R6")!=null){
+							document.getElementById("R6").value = "6";
+							document.getElementById("Relevance").innerHTML="6";
+							cscore[5]=6;
+						}
+						if(document.getElementById("R7")!=null){
+							document.getElementById("R7").value = "6";
+
+							document.getElementById("AVQuality").innerHTML="6";
+							cscore[6]=6;
+						}
+						if(document.getElementById("R8")!=null){
+							document.getElementById("R8").value = "6.5";
+							document.getElementById("Attitude").innerHTML="6.5";
+							cscore[7]=6.5;
+						}
+						if(document.getElementById("R9")!=null){
+							document.getElementById("R9").value = "6";
+							document.getElementById("Complexity").innerHTML="6";
+							cscore[8]=6;
+						}
+					}
+				 
+			 					 
+			 }
+			}
+		
+		console.log(cscore)
+		return cscore
+	
+	}
 	function Rollback(){
 		var temp
 		temp=oldsrc
@@ -1679,28 +2294,49 @@
 	}
 	
 	function Showvideo(){
+		var arrdata = document.getElementById("uniqueID").value;
+		var senddata=new Array()
+		
+		senddata[0]=arrdata
+		senddata[1]=vnum
+		
 		oldsrc=document.getElementById('iframe').src
 	 	document.getElementById('iframe').src="../../application/views/player/player.html";
 
 		var frame = document.getElementById('iframe');
-		frame.contentWindow.postMessage(vnum, '*'); 
-		console.log(vnum)
+		frame.contentWindow.postMessage(senddata, '*'); 
+
 		
 	}
 	function Showvideo1(){
+				
+		var arrdata = document.getElementById("uniqueID").value;
+		var senddata=new Array()
+		
+		senddata[0]=arrdata
+		senddata[1]=cnum
+		
 		oldsrc=document.getElementById('iframe').src
 	 	document.getElementById('iframe').src="../../application/views/player/player.html";
 
 		var frame = document.getElementById('iframe');
-		frame.contentWindow.postMessage(cnum, '*'); 
+		frame.contentWindow.postMessage(senddata, '*'); 
 		
 	}
 	function Showvideo2(){
+				
+		var arrdata = document.getElementById("uniqueID").value;
+		var senddata=new Array()
+		
+		senddata[0]=arrdata
+		senddata[1]=bnum
+		
+		
 		oldsrc=document.getElementById('iframe').src
 	 	document.getElementById('iframe').src="../../application/views/player/player.html";
 
 		var frame = document.getElementById('iframe');
-		frame.contentWindow.postMessage(bnum, '*'); 
+		frame.contentWindow.postMessage(senddata, '*'); 
 		
 		
 	}
@@ -1882,6 +2518,13 @@
 	}
 		
 	function countpart(){
+		var uploadbox2=document.getElementById("select").value;
+		
+		if (uploadbox2=="blank"){
+			alert("please upload the video before countpart")
+		}
+		else
+		{
 		
 		var arrdata=  document.getElementById("uniqueID").value;
 
@@ -2303,7 +2946,7 @@
 		console.log(bnum)
 		
 	}
-
+	}
 	</script>
   	
   	<script>
@@ -2354,20 +2997,20 @@
 		<div class="panel-body " >
 			<form id="form1" method="get" onsubmit="return choose()"  name="form" >
 		  		<label>field</label>
-		  		<input type="text" name="field" id="uniqueID" value="" style="width: 200px"> 
-		  		<input type="button" value="highlight" onclick="highlight();" style="margin: auto 0px auto 35px">
-		  		<input type="button" value="countpart" onclick="countpart();" style="margin: auto 0px auto 30px; " >  
-			</form>      
+		  		<input type="text" name="field" id="uniqueID" value="" style="width: 120px"> 
+		  		<input type="submit" value="Enter" onclick=";" style="margin: 10px 30px auto auto" >
+
+			</form>   
         </div>
         </div>
-        <div class="panel panel-default">
+		<div class="panel panel-default">
 		<div class="panel-heading">
         	<i class="fa fa-bell "></i> upload
         </div>		
 		<div class="panel-body " >
 			<form>
 			<select id="select" onchange="report(this.value)">
-			<option value="">Upload</option>
+			<option value="blank">Upload</option>
 			<option value="demo1">demo1</option>
 			<option value="demo2">demo2</option>
 			<option value="demo3">demo3</option>
@@ -2376,8 +3019,27 @@
 			<option value="reset">reset</option>
 			</select>
 			</form>
-      		<input type="button" value="getgood" onclick="getgood();" style="margin: 10px auto auto auto">
-			<input type="button" value="inputOct" onclick="Inputscore();" style="margin: auto 0px auto 30px; " >       		       
+ 		  	<input type="button" value="highlight" onclick="highlight();" style="background-color: Darkorange;" style="margin: 10px 30px auto auto" >
+		  	<input type="button" value="Alternative Solutions" onclick="countpart();" style="margin: 10px 30px auto auto">        		   
+        </div>
+        </div>
+        <div class="panel panel-default">
+		<div class="panel-heading">
+        	<i class="fa fa-bell "></i> good
+        </div>		
+		<div class="panel-body " >
+			<form>
+			<select id="select2" >
+			<option value="blank">GoodSample</option>
+			<option value="1">good1</option>
+			<option value="2">good2</option>
+			<option value="3">good3</option>
+			<option value="4">good4</option>
+			<option value="5">good5</option>
+			</select>
+			</form>
+
+      		<input type="button" value="Successful Samples" onclick="getgood();"  style="background-color: lightgreen; margin: 10px auto auto auto;">     		       
         </div>
         </div>		
 		<div class="panel panel-default">
@@ -2386,6 +3048,7 @@
         </div>		
 		<div class="panel-body " >
           <ul class="nav nav-sidebar list-group">
+           	<input type="button" value="Activate Features" onclick="Inputscore();" style="background-color: lightgray; margin: 10px auto auto 20px; " >  
             <div id="li2" style="margin: 10px;">              
             <li><a href="#" id="hDuraion" class="hvalue" >Duraion</a></li>
                 <input id= "R2" type="range" min="0" max="7" value="0" step="0.5" onchange="showValue2(this.value)" style="width: 200px" />
