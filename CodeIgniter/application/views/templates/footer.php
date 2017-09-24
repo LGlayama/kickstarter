@@ -1,4 +1,4 @@
-        <h2 class="sub-header">Demo Video</h2>
+        <h2 class="sub-header">Example Video</h2>
         
           <div class="row placeholders">
    

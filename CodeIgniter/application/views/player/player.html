@@ -14,7 +14,7 @@
 	  window.addEventListener('message', function(event) { 
 			var cat=event.data[0]
 			var num=event.data[1]	
-			console.log(num)
+			console.log(event.data)
 				// IMPORTANT: Check the origin of the data! 
 			if (event.origin=="http://localhost") { 
 					document.getElementById('player').src="../../video/"+cat+"/vid_"+num.toString()+".mp4"	

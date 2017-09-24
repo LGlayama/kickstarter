@@ -73,6 +73,7 @@
 
 	<script>
 
+	
 	function choose(){
 
 		var elemp = document.getElementById('li2').parentNode;
@@ -121,10 +122,6 @@
 					var elem4 = document.getElementById('li3');
 					oldnode[lenold]=elem4.parentNode.removeChild(elem4);
 					lenold++;
-				}
-				else{
-					oldsrc=document.getElementById('iframe').src
-					document.getElementById('iframe').src="<?php echo base_url();?>application/views/hex/demo_h.html";
 				}
 			}
 		}
@@ -1516,12 +1513,13 @@
 		senddata[0]=arrdata
 		senddata[1]=numvalue
 		
+		console.log(senddata)
 		
-		if (arrdata=="design" || arrdata=="fashion" || arrdata=="technology") {
+		if (frame.src.indexOf('hex')==-1) {
 		
 			oldsrc=document.getElementById('iframe').src
 			document.getElementById('iframe').src="../../application/views/player/player.html";
-
+			
 			frame.contentWindow.postMessage(senddata, '*'); 
 			
 			closewin(numvalue)
@@ -1529,8 +1527,6 @@
 		else{
 			console.log(numvalue)
 			temps=closewin(numvalue)
-			
-			
 			frame.contentWindow.postMessage(temps, '*'); 
 		}
 		
@@ -2942,10 +2938,14 @@
 			}
 		getcp(leafid)
 		fbnode(leafid)
-		console.log(cnum)
-		console.log(bnum)
-		
+
 	}
+	}
+		
+	function compare(){					
+		oldsrc=document.getElementById('iframe').src
+		document.getElementById('iframe').src="<?php echo base_url();?>application/views/hex/demo_h.html";
+						
 	}
 	</script>
   	
@@ -3150,6 +3150,9 @@
 			<div class='page-header'>
   				<div class='btn-toolbar pull-right'>
       				<button type='button' class='btn btn-primary' onclick="Rollback();">Rollback</button>    			
+  				</div>
+  				<div class='btn-toolbar pull-right'>
+      				<button type='button' class='btn btn-primary' onclick="compare();" style=" margin: auto 20px auto 40px; ">Compare Videos</button>    			
   				</div>
   				<h2>Tree Map</h2>
 			</div>

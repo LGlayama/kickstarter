@@ -58,7 +58,8 @@
 				console.log(tempvalue)
 				
 				// IMPORTANT: Check the origin of the data! 
-				if (event.origin=="http://localhost") { 
+				if (event.origin=="http://localhost") {
+					
                 	val1 = parseInt(tempvalue[1]) / 7;
 					val2 = parseInt(tempvalue[2]) / 7;
                 	val3 = parseInt(tempvalue[3]) / 7;
@@ -67,6 +68,7 @@
                 	val6 = parseInt(tempvalue[6]) / 7;
 					val7 = parseInt(tempvalue[7]) / 7;
 					val8 = parseInt(tempvalue[8]) / 7;
+					console.log([val1, val2, val3, val4, val5, val6,val7,val8])
 					if (tempvalue[0]==-3){
 						fresh('#33FF66');
 					}
@@ -100,7 +102,7 @@
             		bgc = '#FF8C00';
         		}
 				
-				console.log(bgc)
+				console.log([val1, val2, val3, val4, val5, val6,val7,val8])
 
                 hexagon.init('demo', 180, ['Duration', 'Involvement', 'PI', 'Creativity', 'Relevance', 'AVQuality','Attitude','Complexity']);
                 hexagon.draw([val1, val2, val3, val4, val5, val6,val7,val8],bgc);
