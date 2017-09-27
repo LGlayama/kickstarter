@@ -2943,7 +2943,23 @@
 	}
 	}
 		
-	function compare(){					
+	function compare(){
+		var elemp = document.getElementById('li2').parentNode;
+		var a;
+		for (a = 0; a < lenold; a++) {
+			elemp.appendChild(oldnode[a])
+		}
+		oldnode=[];
+		lenold=0;
+
+		var x = document.getElementsByClassName("hvalue");
+		var i;
+		for (i = 0; i < x.length; i++) {
+    		x[i].style.color = "steelblue";
+		}
+			
+		resetbar();
+	 					
 		oldsrc=document.getElementById('iframe').src
 		document.getElementById('iframe').src="<?php echo base_url();?>application/views/hex/demo_h.html";
 						
