@@ -1475,7 +1475,7 @@
 	}
 		
 	function Inputscore(){
-		var iframe = document.getElementById('iframe');
+		var frame = document.getElementById('iframe');
 		var iscore= new Array();
 		iscore[0]=-2;
 		iscore[1]=0;
@@ -1497,7 +1497,8 @@
 	 	iscore[7]=  document.getElementById("Attitude")==null? -1:document.getElementById("Attitude").innerHTML;
 	 	iscore[8]=  document.getElementById("Complexity")==null? -1:document.getElementById("Complexity").innerHTML;
 		
-		iframe.contentWindow.postMessage(iscore, '*'); 
+		frame.contentWindow.postMessage(iscore, '*'); 
+		
 	}
 		
 	function getgood(){

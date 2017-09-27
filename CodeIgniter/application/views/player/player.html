@@ -1,11 +1,13 @@
   <!DOCTYPE html>
   <html>
-  <body>
+  
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
-  <video width="640" height="480" controls id="player" style="clear:both;display:block;margin:auto">
-    <source src="../../video/design/vid_1.mp4"  type="video/mp4">
-    Your browser does not support the video tag.
+  <body>
+  <div id="videoWrap">
+  <video width="640" height="480" controls id="player" src="../../video/design/vid_1.mp4" style="clear:both;display:block;margin:auto">
   </video>
+  </div>
   </body>
 
 
@@ -17,8 +19,15 @@
 			console.log(event.data)
 				// IMPORTANT: Check the origin of the data! 
 			if (event.origin=="http://localhost") { 
-					document.getElementById('player').src="../../video/"+cat+"/vid_"+num.toString()+".mp4"	
-					console.log("../../video/"+cat+"/vid_"+num.toString()+".mp4")
+					var newfile = "../../video/"+cat+"/vid_"+num.toString()+".mp4";
+					var videoWrap = document.getElementById('player');
+
+					player.pause();
+					player.src =newfile;
+					player.load();
+					player.play();
+					
+					
 				} else { 
 				   return; 
 				} 
